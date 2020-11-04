@@ -58,7 +58,7 @@
         android:inputType="textPassword"
         android:textColor="#3a3333" />
 
-    <androidx.cardview.widget.CardView
+   <androidx.cardview.widget.CardView
         android:id="@+id/cardLogin"
         android:layout_width="300dp"
         android:layout_height="50dp"
@@ -68,6 +68,9 @@
         app:cardBackgroundColor="#cfb2ea"
         app:cardElevation="10dp"
         app:cardCornerRadius="25dp"
+        android:onClick="onClick"
+       android:clickable="true"
+
         >
 
         <RelativeLayout
@@ -85,6 +88,21 @@
         </RelativeLayout>
     </androidx.cardview.widget.CardView>
 
+
+  <!--  <Button
+        android:id="@+id/loginButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/password"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:text="LogIn"
+        android:background="#cfb2ea"
+
+
+        />
+-->
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
@@ -92,7 +110,9 @@
         android:text="Register Here"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="10dp"
-        android:layout_below="@id/cardLogin"/>
+        android:layout_below="@id/cardLogin"
+
+        />
 
 
 </RelativeLayout>
