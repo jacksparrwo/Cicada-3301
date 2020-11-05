@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="preloaded_fonts" translatable="false">
+        <item>@font/allan_bold</item>
+        <item>@font/caveat_brush</item>
+        <item>@font/courgette</item>
+        <item>@font/kotta_one</item>
+        <item>@font/lemonada_light</item>
+        <item>@font/lobster_two</item>
+        <item>@font/satisfy</item>
+    </array>
+</resources>
