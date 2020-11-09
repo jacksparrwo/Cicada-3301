@@ -30,6 +30,7 @@
         android:background="@drawable/my_button_bg"
         android:fontFamily="@font/satisfy"
         android:text="Categories"
+        android:onClick="onClickCategories"
         android:textAllCaps="false"
         android:textSize="24sp"
         android:typeface="normal" />
@@ -44,7 +45,7 @@
         android:layout_marginTop="382dp"
         android:background="@drawable/my_button_bg"
         android:clickable="true"
-        android:text="Scores"
+        android:text="Genres"
         android:textAllCaps="false"
         android:textSize="24sp"
         android:typeface="normal"

@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg2"
+    tools:context=".Categories">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="25dp"
+        android:fontFamily="cursive"
+        android:text="Let's sing!"
+        android:textAlignment="inherit"
+        android:textColor="@android:color/white"
+        android:textSize="36sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="70dp"
+        android:fontFamily="serif-monospace"
+        android:text="Choose a category"
+        android:textAlignment="inherit"
+        android:textColor="@android:color/white"
+        android:textSize="18sp" />
+
+    <LinearLayout
+        android:id="@+id/firstLinear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:weightSum="2"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/buttonLove"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="55dp"
+            android:layout_marginRight="55dp"
+            android:layout_marginTop="130dp"
+            android:background="@drawable/my_button_bg"
+            android:fontFamily="serif-monospace"
+            android:text=" Love "
+            android:textAllCaps="false"
+            android:textSize="18sp"
+            android:typeface="normal" />
+
+        <Button
+            android:id="@+id/buttonChristmas"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="55dp"
+            android:layout_marginTop="130dp"
+            android:background="@drawable/my_button_bg"
+            android:fontFamily="serif-monospace"
+            android:text=" X-mas "
+            android:textAllCaps="false"
+            android:textSize="18sp"
+            android:typeface="normal" />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/secondLinear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/firstLinear"
+        android:padding="5dp"
+        android:weightSum="2"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/buttonShower"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="55dp"
+            android:layout_marginRight="55dp"
+            android:layout_marginTop="50dp"
+            android:background="@drawable/my_button_bg"
+            android:fontFamily="serif-monospace"
+            android:text=" Shower "
+            android:textAllCaps="false"
+            android:textSize="18sp"
+            android:typeface="normal" />
+
+        <Button
+            android:id="@+id/buttonParty"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="55dp"
+            android:layout_marginTop="50dp"
+            android:background="@drawable/my_button_bg"
+            android:fontFamily="serif-monospace"
+            android:text=" Party "
+            android:textAllCaps="false"
+            android:textSize="18sp"
+            android:typeface="normal" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/thirdLinear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/secondLinear"
+        android:padding="5dp"
+        android:weightSum="2"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/buttonSummer"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="55dp"
+            android:layout_marginRight="55dp"
+            android:layout_marginTop="50dp"
+            android:background="@drawable/my_button_bg"
+            android:fontFamily="serif-monospace"
+            android:text=" Summer "
+            android:textAllCaps="false"
+            android:textSize="18sp"
+            android:typeface="normal" />
+
+        <Button
+            android:id="@+id/buttonOldie"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="55dp"
+            android:layout_marginTop="50dp"
+            android:background="@drawable/my_button_bg"
+            android:fontFamily="serif-monospace"
+            android:text=" Oldie "
+            android:textAllCaps="false"
+            android:textSize="18sp"
+            android:typeface="normal" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/forthLinear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/thirdLinear"
+        android:padding="5dp"
+        android:weightSum="2"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/buttonKids"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="55dp"
+            android:layout_marginRight="55dp"
+            android:layout_marginTop="50dp"
+            android:background="@drawable/my_button_bg"
+            android:fontFamily="serif-monospace"
+            android:text=" Kids "
+            android:textAllCaps="false"
+            android:textSize="18sp"
+            android:typeface="normal" />
+
+        <Button
+            android:id="@+id/buttonSad"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="55dp"
+            android:layout_marginTop="50dp"
+            android:background="@drawable/my_button_bg"
+            android:fontFamily="serif-monospace"
+            android:text=" Sad "
+            android:textAllCaps="false"
+            android:textSize="18sp"
+            android:typeface="normal" />
+    </LinearLayout>
+</RelativeLayout>

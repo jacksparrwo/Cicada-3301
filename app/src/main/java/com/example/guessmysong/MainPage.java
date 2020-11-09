@@ -17,10 +17,16 @@ public class MainPage extends AppCompatActivity {
     public void onClickSettings(View view){
         openSettings();
     }
+    public void onClickCategories(View view){openCategories();}
 
 
     public void openSettings(){
         Intent settings = new Intent(this, SettingsPage.class);
         startActivity(settings);
+    }
+
+    public void openCategories(){
+        Intent categories = new Intent(this, Categories.class);
+        startActivity(categories);
     }
 }
