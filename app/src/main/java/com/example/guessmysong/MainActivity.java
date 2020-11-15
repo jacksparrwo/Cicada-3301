@@ -8,7 +8,6 @@ import android.widget.Toast;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.bumptech.glide.request.RequestOptions;
 import com.facebook.AccessToken;
 import com.facebook.AccessTokenTracker;
 import com.facebook.CallbackManager;
@@ -19,7 +18,6 @@ import com.facebook.GraphResponse;
 import com.facebook.login.LoginResult;
 import com.facebook.login.widget.LoginButton;
 
-import org.json.JSONException;
 import org.json.JSONObject;
 
 import de.hdodenhof.circleimageview.CircleImageView;
@@ -29,12 +27,14 @@ public class MainActivity extends AppCompatActivity {
     private LoginButton loginButton;
     private CircleImageView circleImageView;
     private TextView txtName, txtPassword;
+    private MainActivity crtInstance;
 
     private CallbackManager callbackManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        crtInstance = this;
         setContentView(R.layout.activity_main);
 
         loginButton = findViewById(R.id.facebookLogin);
@@ -91,7 +91,7 @@ public class MainActivity extends AppCompatActivity {
         GraphRequest request = GraphRequest.newMeRequest(newAccessToken, new GraphRequest.GraphJSONObjectCallback() {
             @Override
             public void onCompleted(JSONObject object, GraphResponse response) {
-                try {
+                /*try {
                     String first_name = object.getString("first_name");
                     String last_name = object.getString("last_name");
                     String password = object.getString("password");
@@ -107,8 +107,12 @@ public class MainActivity extends AppCompatActivity {
 
                 } catch (JSONException e){
                     e.printStackTrace();
-                }
+                }*/
 
+
+                // bosa test here
+                Intent ytTest = new Intent(crtInstance, YTSingleSong.class);
+                startActivity(ytTest);
 
             }
         });
