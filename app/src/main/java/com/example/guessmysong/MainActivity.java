@@ -1,16 +1,13 @@
 package com.example.guessmysong;
 
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.cardview.widget.CardView;
-
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.bumptech.glide.Glide;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.bumptech.glide.request.RequestOptions;
 import com.facebook.AccessToken;
 import com.facebook.AccessTokenTracker;
@@ -47,7 +44,6 @@ public class MainActivity extends AppCompatActivity {
 
         callbackManager = CallbackManager.Factory.create();
         checkLoginStatus();
-
 
         loginButton.registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
             @Override
@@ -90,7 +86,7 @@ public class MainActivity extends AppCompatActivity {
     };
 
 
-    public  void openMainPage(AccessToken newAccessToken){
+    public  void openMainPage(AccessToken newAccessToken) {
 
         GraphRequest request = GraphRequest.newMeRequest(newAccessToken, new GraphRequest.GraphJSONObjectCallback() {
             @Override
@@ -121,7 +117,6 @@ public class MainActivity extends AppCompatActivity {
         parameters.putString("fields","first_name, last_name, password, id");
         request.setParameters(parameters);
         request.executeAsync();
-
 
     }
 
