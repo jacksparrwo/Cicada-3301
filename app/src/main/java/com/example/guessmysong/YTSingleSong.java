@@ -17,7 +17,7 @@ public class YTSingleSong extends YouTubeBaseActivity {
         setContentView(R.layout.activity_single_song);
         mBouncySongYTPlayer = this.<YouTubePlayerView>findViewById(R.id.bouncySong);
 
-        YouTube.Search();
+        //YouTube.Search();
         // prepare the listener
         YouTubePlayer.OnInitializedListener onInitializedListener = new YouTubePlayer.OnInitializedListener() {
             @Override
