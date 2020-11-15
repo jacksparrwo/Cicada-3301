@@ -1,4 +1,6 @@
-package com.example.guessmysong.database;
+package com.example.guessmysong.firebase.database;
+
+import com.example.guessmysong.firebase.IDatabaseData;
 
 public enum EFemaleDatabaseData implements IDatabaseData {
     QUEEN_OF_MUSIC,
@@ -7,7 +9,7 @@ public enum EFemaleDatabaseData implements IDatabaseData {
     QUEEN_OF_ROCK;
 
     @Override
-    public String getAchievementName() {
+    public String getName() {
         return this.toString().substring(0, 1).toUpperCase() + this.toString().substring(1).toLowerCase().replaceAll("_", " ");
     }
 }

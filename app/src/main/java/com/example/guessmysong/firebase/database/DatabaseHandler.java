@@ -1,4 +1,4 @@
-package com.example.guessmysong.database;
+package com.example.guessmysong.firebase.database;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;

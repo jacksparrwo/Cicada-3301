@@ -2,6 +2,8 @@ package com.example.guessmysong;
 
 import android.os.Bundle;
 
+import com.example.guessmysong.firebase.storage.EMusicTypes;
+import com.example.guessmysong.firebase.storage.StorageHandler;
 import com.google.android.youtube.player.YouTubeBaseActivity;
 import com.google.android.youtube.player.YouTubeInitializationResult;
 import com.google.android.youtube.player.YouTubePlayer;
@@ -16,6 +18,9 @@ public class YTSingleSong extends YouTubeBaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_single_song);
         mBouncySongYTPlayer = this.<YouTubePlayerView>findViewById(R.id.bouncySong);
+
+        StorageHandler st = StorageHandler.getInstance();
+        st.getMusicByType(EMusicTypes.ROCK);
 
         //YouTube.Search();
         // prepare the listener
