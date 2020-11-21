@@ -1,18 +1,12 @@
 package com.example.guessmysong;
 
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.facebook.FacebookSdk;
-import com.facebook.appevents.AppEventsLogger;
-
-import com.bumptech.glide.request.RequestOptions;
 import com.facebook.AccessToken;
 import com.facebook.AccessTokenTracker;
 import com.facebook.CallbackManager;
@@ -38,7 +32,6 @@ public class MainActivity extends AppCompatActivity {
     private TextView txtName, txtPassword;
 
     private CallbackManager callbackManager;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -56,6 +49,9 @@ public class MainActivity extends AppCompatActivity {
         AccessToken accessToken = AccessToken.getCurrentAccessToken();
         boolean isLoggedIn = accessToken != null && !accessToken.isExpired();
 
+        if(isLoggedIn){
+            startActivity(new Intent(MainActivity.this, MainPage.class));
+        }
 
         loginButton.registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
             @Override
@@ -83,22 +79,19 @@ public class MainActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
 
         GraphRequest graphRequest = GraphRequest.newMeRequest(AccessToken.getCurrentAccessToken(), new GraphRequest.GraphJSONObjectCallback() {
-            @Override
-            public void onCompleted(JSONObject object, GraphResponse response) {
-                Log.d("Demo", object.toString());
-                try{
-                    String username = object.getString("name");
-                    //txtName.setText(username);
-                } catch(JSONException e){
-                    e.printStackTrace();
-                }
-            }
-        });
+                    @Override
+                    public void onCompleted(JSONObject object, GraphResponse response) {
+                        try{
+                            String username = object.getString("name");
+                            //txtName.setText(username);
+                        } catch(JSONException e){
+                            e.printStackTrace();
+                        }
+                    }
+                });
 
         Bundle bundle = new Bundle();
         bundle.putString("fields", "gender, name, id, first_name, last_name");
-
-
         graphRequest.setParameters(bundle);
         graphRequest.executeAsync();
     }
@@ -118,4 +111,5 @@ public class MainActivity extends AppCompatActivity {
         super.onDestroy();
         accessTokenTracker.stopTracking();
     }
+
 }
