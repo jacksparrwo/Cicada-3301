@@ -38,7 +38,7 @@
         app:cardBackgroundColor="#11000000"
         app:cardElevation="10dp"
         app:cardCornerRadius="25dp"
-        android:onClick="onClick"
+        android:onClick="loginOnClick"
         android:clickable="true"
         >
         <!-- #71c7ec  cardBackgroundColor-->
@@ -66,10 +66,10 @@
         app:cardBackgroundColor="#11000000"
         app:cardElevation="10dp"
         app:cardCornerRadius="25dp"
-        android:onClick="onClick"
+        android:onClick="registerOnClick"
         android:clickable="true"
         >
-        <!-- #71c7ec  cardBackgroundColor-->
+
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">

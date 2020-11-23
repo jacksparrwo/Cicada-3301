@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.TextView;
 
 import com.facebook.AccessToken;
@@ -58,6 +59,7 @@ public class MainActivity extends AppCompatActivity {
             public void onSuccess(LoginResult loginResult) { //successful login
                 Log.d("Successful", "Login successful");
                 startActivity(new Intent(MainActivity.this, MainPage.class));
+                finish();
 
             }
 
@@ -110,6 +112,13 @@ public class MainActivity extends AppCompatActivity {
     protected void onDestroy() {
         super.onDestroy();
         accessTokenTracker.stopTracking();
+    }
+
+    public void loginOnClick(View view){
+        startActivity(new Intent(MainActivity.this, LoginActivity.class));
+    }
+    public void registerOnClick(View view){
+        startActivity(new Intent(MainActivity.this, LoginActivity.class));
     }
 
 }
