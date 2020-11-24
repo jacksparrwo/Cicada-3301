@@ -1,6 +1,7 @@
 package com.example.guessmysong;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -11,20 +12,20 @@ import android.widget.EditText;
 
 public class LoginActivity extends AppCompatActivity {
 
-    Button login;
+    CardView login;
     SharedPreferences sp;
-    EditText userField = (EditText)findViewById(R.id.username);
-    EditText passwordField = (EditText)findViewById(R.id.password);
+//    EditText userField = (EditText)findViewById(R.id.username);
+  //  EditText passwordField = (EditText)findViewById(R.id.password);
 
-    String user = userField.getText().toString();
-    String password =passwordField.getText().toString();
+   // String user = userField.getText().toString();
+    //String password =passwordField.getText().toString();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        login = (Button) findViewById(R.id.cardLogin);
+        login = (CardView) findViewById(R.id.loginButton);
         sp = getSharedPreferences("login",MODE_PRIVATE);
 
         if(sp.getBoolean("logged",false)){
@@ -44,8 +45,5 @@ public class LoginActivity extends AppCompatActivity {
         startActivity(new Intent(this, MainPage.class));
     }
 
-    /*public void checkUser(String user){
-        if(user!=null)
 
-    }*/
 }
