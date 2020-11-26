@@ -9,6 +9,8 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 public class MainPage extends AppCompatActivity {
 
 
@@ -21,10 +23,9 @@ public class MainPage extends AppCompatActivity {
         setContentView(R.layout.activity_main_page);
 
         Intent intent = getIntent();
-        String username = intent.getStringExtra("USERNAME");
         TextView u = findViewById(R.id.welcome);
-        u.setText("Welcome" + username, TextView.BufferType.NORMAL);
-       // usernameTv.setText("Welcome " + username, TextView.BufferType.NORMAL);
+        u.setText("Let's sing!" , TextView.BufferType.NORMAL);
+
 
     }
 
@@ -32,6 +33,7 @@ public class MainPage extends AppCompatActivity {
         openSettings();
     }
     public void onClickCategories(View view){openCategories();}
+    public void onClickLogout(View view){ logout();}
 
 
     public void openSettings(){
@@ -43,4 +45,10 @@ public class MainPage extends AppCompatActivity {
         Intent categories = new Intent(this, Categories.class);
         startActivity(categories);
     }
+    public void logout(){
+        FirebaseAuth.getInstance().signOut();
+        startActivity(new Intent(getApplicationContext(), LoginActivity.class));
+        finish();
+    }
+
 }
