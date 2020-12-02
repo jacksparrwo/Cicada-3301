@@ -1,12 +1,12 @@
 package com.example.guessmysong;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.facebook.AccessToken;
 import com.facebook.AccessTokenTracker;
@@ -58,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onSuccess(LoginResult loginResult) { //successful login
                 Log.d("Successful", "Login successful");
-                startActivity(new Intent(MainActivity.this, MainPage.class));
+                startActivity(new Intent(MainActivity.this, MainMenu.class));
                 finish();
 
             }
@@ -121,5 +121,4 @@ public class MainActivity extends AppCompatActivity {
     public void registerOnClick(View view){
         startActivity(new Intent(MainActivity.this, RegisterActivity.class));
     }
-
 }
