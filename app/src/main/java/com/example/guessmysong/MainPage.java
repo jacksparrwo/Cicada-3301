@@ -1,43 +1,39 @@
 package com.example.guessmysong;
 
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.TextView;
 
-import com.facebook.AccessToken;
-import com.facebook.AccessTokenTracker;
-import com.facebook.CallbackManager;
-import com.facebook.FacebookCallback;
-import com.facebook.FacebookException;
-import com.facebook.login.LoginResult;
-import com.facebook.login.widget.LoginButton;
-
-import de.hdodenhof.circleimageview.CircleImageView;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class MainPage extends AppCompatActivity {
 
 
 
 
+    @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_page);
 
+        Intent intent = getIntent();
+        TextView u = findViewById(R.id.welcome);
+        u.setText("Let's sing!" , TextView.BufferType.NORMAL);
 
 
     }
-
-
 
     public void onClickSettings(View view){
         openSettings();
     }
     public void onClickCategories(View view){openCategories();}
+    public void onClickLogout(View view){ logout();}
 
 
     public void openSettings(){
@@ -49,4 +45,10 @@ public class MainPage extends AppCompatActivity {
         Intent categories = new Intent(this, Categories.class);
         startActivity(categories);
     }
+    public void logout(){
+        FirebaseAuth.getInstance().signOut();
+        startActivity(new Intent(getApplicationContext(), LoginActivity.class));
+        finish();
+    }
+
 }

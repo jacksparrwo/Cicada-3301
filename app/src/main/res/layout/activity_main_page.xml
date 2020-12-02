@@ -8,13 +8,14 @@
     tools:context=".MainPage">
 
     <TextView
+        android:id="@+id/welcome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="25dp"
         android:fontFamily="cursive"
-        android:text="Let's sing!"
+        android:text=""
         android:textAlignment="inherit"
         android:textColor="@android:color/white"
         android:textSize="36sp" />
@@ -62,5 +63,17 @@
         android:clickable="true"
         android:onClick="onClickSettings"
         android:background="@drawable/ic_action_settings_white" />
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="31dp"
+        android:layout_marginEnd="50dp"
+        android:background="@drawable/ic_action_logout"
+        android:clickable="true"
+        android:onClick="onClickLogout" />
 
 </RelativeLayout>
