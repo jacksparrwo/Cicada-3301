@@ -5,4 +5,8 @@
 
     <string name="facebook_app_id">713668476248470</string>
     <string name="fb_login_protocol_scheme">fb713668476248470</string>
+    <string name="exit">Exit </string>
+    <string name="options">Options </string>
+    <string name="achievements">Achievements </string>
+    <string name="start">Start  </string>
 </resources>

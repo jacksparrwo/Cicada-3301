@@ -50,6 +50,8 @@
             android:layout_marginLeft="5dp"
             android:layout_marginRight="5dp"
             android:background="@drawable/round_corners"
+            android:clickable="true"
+            android:onClick="onClickXmas"
             android:orientation="vertical">
 
             <ImageView
@@ -81,6 +83,8 @@
             android:layout_height="100dp"
             android:layout_marginRight="5dp"
             android:background="@drawable/round_corners"
+            android:clickable="true"
+            android:onClick="onClickXmas"
             android:orientation="vertical">
 
             <ImageView
