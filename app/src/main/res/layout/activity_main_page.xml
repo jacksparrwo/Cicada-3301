@@ -4,17 +4,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg2"
+    android:background="@drawable/bg6"
     tools:context=".MainPage">
 
     <TextView
+        android:id="@+id/welcome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="25dp"
         android:fontFamily="cursive"
-        android:text="Let's sing!"
+        android:text=""
         android:textAlignment="inherit"
         android:textColor="@android:color/white"
         android:textSize="36sp" />
@@ -30,6 +31,7 @@
         android:background="@drawable/my_button_bg"
         android:fontFamily="@font/satisfy"
         android:text="Categories"
+        android:onClick="onClickCategories"
         android:textAllCaps="false"
         android:textSize="24sp"
         android:typeface="normal" />
@@ -44,22 +46,11 @@
         android:layout_marginTop="382dp"
         android:background="@drawable/my_button_bg"
         android:clickable="true"
-        android:text="Scores"
+        android:text="Genres"
         android:textAllCaps="false"
         android:textSize="24sp"
         android:typeface="normal"
         android:fontFamily="@font/satisfy" />
 
-    <Button
-        android:id="@+id/button3"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="31dp"
-        android:layout_marginEnd="291dp"
-        android:clickable="true"
-        android:onClick="onClickSettings"
-        android:background="@drawable/ic_action_settings_white" />
 
 </RelativeLayout>

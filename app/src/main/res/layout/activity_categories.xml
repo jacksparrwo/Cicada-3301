@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg6"
+    tools:context=".Categories">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="25dp"
+        android:fontFamily="cursive"
+        android:text="Let's sing!"
+        android:textAlignment="inherit"
+        android:textColor="@android:color/white"
+        android:textSize="36sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="70dp"
+        android:fontFamily="serif-monospace"
+        android:text="Choose a category"
+        android:textAlignment="inherit"
+        android:textColor="@android:color/white"
+        android:textSize="18sp" />
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_alignParentBottom="true"
+    android:layout_centerHorizontal="true">
+
+    <LinearLayout
+        android:id="@+id/firstLinear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="5dp">
+
+        <LinearLayout
+            android:layout_width="80dp"
+            android:layout_height="100dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:background="@drawable/round_corners"
+            android:clickable="true"
+            android:onClick="onClickXmas"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/loveLogo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:alpha="0.7"
+                android:src="@drawable/ic_action_love_white" />
+
+            <TextView
+                android:id="@+id/buttonLove"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:layout_marginRight="10dp"
+                android:fontFamily="@font/andada"
+                android:gravity="bottom|center"
+                android:text=" Love "
+                android:textAllCaps="false"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:typeface="normal" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="80dp"
+            android:layout_height="100dp"
+            android:layout_marginRight="5dp"
+            android:background="@drawable/round_corners"
+            android:clickable="true"
+            android:onClick="onClickXmas"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/christmasLogo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:alpha="0.7"
+                android:src="@drawable/ic_action_christmas" />
+
+            <TextView
+                android:id="@+id/buttonChristmas"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:layout_marginRight="10dp"
+                android:fontFamily="@font/andada"
+                android:gravity="bottom|center"
+                android:text=" X-mas "
+                android:textAllCaps="false"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:typeface="normal" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="80dp"
+            android:layout_height="100dp"
+            android:layout_marginRight="5dp"
+            android:background="@drawable/round_corners"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/showerLogo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:alpha="0.7"
+                android:src="@drawable/ic_action_shower" />
+
+            <TextView
+                android:id="@+id/buttonShower"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:layout_marginRight="10dp"
+                android:fontFamily="@font/andada"
+                android:gravity="bottom|center"
+                android:text=" Shower "
+                android:textAllCaps="false"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:typeface="normal" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="80dp"
+            android:layout_height="100dp"
+            android:layout_marginRight="5dp"
+            android:background="@drawable/round_corners"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/partyLogo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:alpha="0.7"
+                android:src="@drawable/ic_action_party" />
+
+            <TextView
+                android:id="@+id/buttonParty"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:layout_marginRight="10dp"
+                android:fontFamily="@font/andada"
+                android:gravity="bottom|center"
+                android:text=" Party "
+                android:textAllCaps="false"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:typeface="normal" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/secondLinear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:orientation="horizontal"
+        android:padding="5dp">
+
+        <LinearLayout
+            android:layout_width="80dp"
+            android:layout_height="100dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginLeft="5dp"
+            android:background="@drawable/round_corners"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/summerLogo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_action_beach"
+                android:alpha="0.7"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"/>
+            <TextView
+                android:id="@+id/buttonSummer"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="50dp"
+                android:fontFamily="@font/andada"
+                android:gravity="bottom|center"
+                android:text=" Summer "
+                android:textAllCaps="false"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:typeface="normal" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="80dp"
+            android:layout_height="100dp"
+            android:layout_marginRight="5dp"
+            android:background="@drawable/round_corners"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/oldieLogo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_action_oldie"
+                android:alpha="0.7"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"/>
+            <TextView
+                android:id="@+id/buttonOldie"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="50dp"
+                android:fontFamily="@font/andada"
+                android:gravity="bottom|center"
+                android:text=" Oldie "
+                android:textAllCaps="false"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:typeface="normal" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="80dp"
+            android:layout_height="100dp"
+            android:layout_marginRight="5dp"
+            android:background="#11000000"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/kidsLogo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_action_kids2"
+                android:alpha="0.7"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"/>
+            <TextView
+                android:id="@+id/buttonKids"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="50dp"
+                android:fontFamily="@font/andada"
+                android:gravity="bottom|center"
+                android:text=" Kids "
+                android:textAllCaps="false"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:typeface="normal" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="80dp"
+            android:layout_height="100dp"
+            android:layout_marginRight="5dp"
+            android:background="@drawable/round_corners"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/sadLogo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_action_sad2"
+                android:alpha="0.7"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"/>
+            <TextView
+                android:id="@+id/buttonSad"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="50dp"
+                android:fontFamily="@font/andada"
+                android:gravity="bottom|center"
+                android:text=" Sad "
+                android:textAllCaps="false"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:typeface="normal" />
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>
+</RelativeLayout>
