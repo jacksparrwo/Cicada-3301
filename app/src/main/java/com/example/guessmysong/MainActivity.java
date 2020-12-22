@@ -87,7 +87,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onSuccess(LoginResult loginResult) { //successful login
                 Log.d(TAG, "facebook:onSuccess: " + loginResult);
-                startActivity(new Intent(MainActivity.this, MainPage.class));
+                startActivity(new Intent(MainActivity.this, MainMenu.class));
                 finish();
             }
 

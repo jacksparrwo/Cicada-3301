@@ -34,9 +34,9 @@ public class LoginActivity extends AppCompatActivity {
     EditText sEmail, sPassword;
     CardView loginButton;
     ProgressBar progressBar;
-    FirebaseAuth fAuth;
-    FirebaseDatabase database;
-    DatabaseReference ref;
+    private FirebaseAuth fAuth;
+    private FirebaseDatabase database;
+    private DatabaseReference ref;
     UserModel mUser;
 
     @Override
@@ -91,17 +91,8 @@ public class LoginActivity extends AppCompatActivity {
                     }
                 });
 
-
             }
         });
-
-
-
-
-
     }
-
-
-
 
 }
