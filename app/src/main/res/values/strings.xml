@@ -11,4 +11,6 @@
     <string name="let_s_sing">Let\'s sing!</string>
     <string name="achievements">Achievements</string>
     <string name="level">Level:</string>
+    <string name="single_player">Single Player</string>
+    <string name="play_with_friends">Play with friends</string>
 </resources>

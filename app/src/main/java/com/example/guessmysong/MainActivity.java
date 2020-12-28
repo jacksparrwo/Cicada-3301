@@ -1,8 +1,5 @@
 package com.example.guessmysong;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -10,7 +7,9 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.guessmysong.firebase.database.UserModel;
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.facebook.AccessToken;
 import com.facebook.AccessTokenTracker;
 import com.facebook.CallbackManager;
@@ -28,12 +27,9 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FacebookAuthProvider;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.auth.UserInfo;
 
 import org.json.JSONException;
 import org.json.JSONObject;
-
-import java.util.Arrays;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
@@ -177,7 +173,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void updateUI(FirebaseUser user){
 
-        if (user != null){
+        if (user != null) {
             int index = user.getEmail().indexOf('@');
             String displayName = user.getEmail().substring(0,index);
             Toast.makeText(this, displayName + " Signed in successfully", Toast.LENGTH_LONG).show();
