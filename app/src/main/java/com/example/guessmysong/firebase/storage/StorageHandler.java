@@ -1,6 +1,5 @@
 package com.example.guessmysong.firebase.storage;
 
-import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.net.Uri;
 
@@ -53,16 +52,22 @@ public class StorageHandler {
         }
     }
 
-    public void PlayRandomSong(IDatabaseData type) {
-        InitMediaPlayer();
+    public void ResetMediaPlayer() {
+        mediaPlayer.reset();
+    }
 
-        mStorage.child(((EMusicTypes)type).getName()).listAll().addOnSuccessListener(new OnSuccessListener<ListResult>() {
+    public void PlayRandomSong(final String type) {
+        InitMediaPlayer();
+        final StorageReference currentFolder = mStorage.child(type);
+
+        currentFolder.listAll().addOnSuccessListener(new OnSuccessListener<ListResult>() {
             @Override
             public void onSuccess(ListResult listResult) {
                 int numberOfItems = listResult.getItems().size();
                 Random random = new Random();
                 int index = random.nextInt(numberOfItems);
                 String path = listResult.getItems().get(index).toString();
+                currentSong = path.substring("gs://universityproject-2b5cd.appspot.com".length() + "/".length() + type.length() + "/".length());
                 String modifPath = path.substring("gs://universityproject-2b5cd.appspot.com".length());
                 mStorage.child(modifPath).getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
                     @Override
@@ -75,7 +80,6 @@ public class StorageHandler {
                                     mp.start();
                                 }
                             });
-                            mediaPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
                             mediaPlayer.prepare();
                         } catch (IOException e) {
                             e.printStackTrace();
@@ -89,5 +93,15 @@ public class StorageHandler {
 
             }
         });
+    }
+
+    public boolean CheckSong(String song) {
+        boolean res = false;
+
+        if(song.replaceAll(" ", "_").equals(currentSong.replace(".mp3", ""))) {
+            res = true;
+        }
+
+        return res;
     }
 }

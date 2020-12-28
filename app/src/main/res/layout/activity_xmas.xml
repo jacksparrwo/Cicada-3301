@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bg6"
-    tools:context=".Xmas">
+    tools:context=".SinglePlayerSong">
 
     <TextView
         android:layout_width="wrap_content"
@@ -22,7 +22,7 @@
     <LinearLayout
         android:id="@+id/environment"
         android:layout_width="302dp"
-        android:layout_height="330dp"
+        android:layout_height="300dp"
         android:layout_alignParentTop="true"
         android:layout_centerInParent="true"
         android:layout_marginTop="128dp"
@@ -39,12 +39,26 @@
 
     </LinearLayout>
 
+    <EditText
+        android:id="@+id/songName"
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:layout_below="@id/environment"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:ems="15"
+        android:background="#11000000"
+        android:inputType="text"
+        android:hint="Song Title..."
+        android:textSize="16sp"
+        android:textColor="#3a3333" />
+
     <androidx.cardview.widget.CardView
         android:id="@+id/checkButton"
         android:layout_width="100dp"
         android:layout_height="50dp"
         android:layout_centerHorizontal="true"
-        android:layout_below="@id/environment"
+        android:layout_below="@id/songName"
         android:layout_marginTop="28dp"
         app:cardBackgroundColor="#11000000"
         app:cardElevation="10dp"

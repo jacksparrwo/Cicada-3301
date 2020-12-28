@@ -11,8 +11,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar">
-        <activity android:name=".Xmas"></activity>
-	<activity android:name=".YTSingleSong"></activity>
+        <activity android:name=".SinglePlayerSong"></activity>
         <activity android:name=".RegisterActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
@@ -24,6 +23,7 @@
         <activity android:name=".Categories" />
         <activity android:name=".SettingsPage" />
         <activity android:name=".MainPage" />
+        <activity android:name=".SongChoice"/>
         <activity android:name=".GameModes"/>
         <activity android:name=".LoginActivity" />
         <activity android:name=".MainMenu" />
