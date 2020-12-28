@@ -2,7 +2,6 @@
     <string name="app_name">Guess My Song</string>
     <string name="username">Username</string>
     <string name="password">Password</string>
-
     <string name="facebook_app_id">713668476248470</string>
     <string name="fb_login_protocol_scheme">fb713668476248470</string>
     <string name="start">Start</string>
@@ -13,4 +12,5 @@
     <string name="level">Level:</string>
     <string name="single_player">Single Player</string>
     <string name="play_with_friends">Play with friends</string>
+    <string name="profile">Profile</string>
 </resources>

@@ -10,6 +10,7 @@ public class UserModel {
     private String gender;
     private int level;
     private List<String> achievements;
+    private List<List<String>> categories;
 
     public UserModel() {
         // default constructor, in case it is used but should be not

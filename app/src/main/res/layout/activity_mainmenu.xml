@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:fontFamily="cursive"
         android:layout_marginTop="25dp"
-        android:text=""
+        android:text="@string/let_s_sing"
         android:textAlignment="inherit"
         android:textColor="@android:color/white"
         android:textSize="36sp"
@@ -52,7 +52,36 @@
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
                 android:text="@string/start"
-                android:drawableEnd="@drawable/ic_action_start"
+                android:textColor="#fff"
+                android:textSize="18sp"
+                app:drawableEndCompat="@drawable/ic_action_start" />
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/ProfileButton"
+        android:layout_width="200dp"
+        android:layout_height="30dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/StartButton"
+        android:layout_marginTop="20dp"
+        android:clickable="true"
+        android:onClick="profileOnClick"
+        app:cardBackgroundColor="#11000000"
+        app:cardElevation="10dp"
+        app:cardCornerRadius="25dp" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/profile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="@string/profile"
                 android:textColor="#fff"
                 android:textSize="18sp" />
         </RelativeLayout>
@@ -64,7 +93,7 @@
         android:layout_width="200dp"
         android:layout_height="30dp"
         android:layout_centerHorizontal="true"
-        android:layout_below="@+id/StartButton"
+        android:layout_below="@+id/ProfileButton"
         android:layout_marginTop="20dp"
         android:clickable="true"
         android:onClick="achievementsOnClick"
@@ -82,9 +111,9 @@
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
                 android:text="@string/achievements"
-                android:drawableEnd="@drawable/ic_action_achievement"
                 android:textColor="#fff"
-                android:textSize="18sp" />
+                android:textSize="18sp"
+                app:drawableEndCompat="@drawable/ic_action_achievement" />
         </RelativeLayout>
 
     </androidx.cardview.widget.CardView>
@@ -112,9 +141,9 @@
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
                 android:text="@string/options"
-                android:drawableEnd="@drawable/ic_action_settings_white"
                 android:textColor="#fff"
-                android:textSize="18sp" />
+                android:textSize="18sp"
+                app:drawableEndCompat="@drawable/ic_action_settings_white" />
         </RelativeLayout>
 
     </androidx.cardview.widget.CardView>

@@ -1,11 +1,10 @@
 package com.example.guessmysong;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.View;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class Categories extends AppCompatActivity {
 
@@ -21,4 +20,33 @@ public class Categories extends AppCompatActivity {
         startActivity(xmas);
 
     }
+
+    public void onClickLove(View view) {
+
+    }
+
+    public void onClickShower(View view) {
+
+    }
+
+    public void onClickParty(View view) {
+
+    }
+
+    public void onClickSummer(View view) {
+
+    }
+
+    public void onClickOldie(View view) {
+
+    }
+
+    public void onClickKids(View view) {
+
+    }
+
+    public void onClickSad(View view) {
+
+    }
+
 }

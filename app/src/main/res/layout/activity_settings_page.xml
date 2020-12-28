@@ -14,7 +14,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="25dp"
         android:fontFamily="cursive"
-        android:text="Let's sing!"
+        android:text="@string/let_s_sing"
         android:textAlignment="inherit"
         android:textColor="@android:color/white"
         android:textSize="36sp" />

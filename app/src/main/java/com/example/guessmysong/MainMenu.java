@@ -48,6 +48,10 @@ public class MainMenu extends AppCompatActivity {
     public void achievementsOnClick(View view) {
     }
 
+    public void profileOnClick(View view) {
+
+    }
+
     public void optionsOnClick(View view) {
         Intent settings = new Intent(this, SettingsPage.class);
         startActivity(settings);

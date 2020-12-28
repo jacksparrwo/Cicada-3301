@@ -14,7 +14,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="25dp"
         android:fontFamily="cursive"
-        android:text="Let's sing!"
+        android:text="@string/let_s_sing"
         android:textAlignment="inherit"
         android:textColor="@android:color/white"
         android:textSize="36sp" />
@@ -92,7 +92,7 @@
                 android:layout_marginRight="5dp"
                 android:background="@drawable/round_corners"
                 android:clickable="true"
-                android:onClick="onClickXmas"
+                android:onClick="onClickLove"
                 android:orientation="vertical">
 
                 <ImageView
@@ -157,6 +157,8 @@
                 android:layout_height="100dp"
                 android:layout_marginRight="5dp"
                 android:background="@drawable/round_corners"
+                android:clickable="true"
+                android:onClick="onClickShower"
                 android:orientation="vertical">
 
                 <ImageView
@@ -188,6 +190,8 @@
                 android:layout_height="100dp"
                 android:layout_marginRight="5dp"
                 android:background="@drawable/round_corners"
+                android:clickable="true"
+                android:onClick="onClickParty"
                 android:orientation="vertical">
 
                 <ImageView
@@ -231,6 +235,8 @@
                 android:layout_marginLeft="5dp"
                 android:layout_marginRight="5dp"
                 android:background="@drawable/round_corners"
+                android:clickable="true"
+                android:onClick="onClickSummer"
                 android:orientation="vertical">
 
                 <ImageView
@@ -262,6 +268,8 @@
                 android:layout_height="100dp"
                 android:layout_marginRight="5dp"
                 android:background="@drawable/round_corners"
+                android:clickable="true"
+                android:onClick="onClickOldie"
                 android:orientation="vertical">
 
                 <ImageView
@@ -292,7 +300,9 @@
                 android:layout_width="80dp"
                 android:layout_height="100dp"
                 android:layout_marginRight="5dp"
-                android:background="#11000000"
+                android:background="@drawable/round_corners"
+                android:clickable="true"
+                android:onClick="onClickKids"
                 android:orientation="vertical">
 
                 <ImageView
@@ -324,6 +334,8 @@
                 android:layout_height="100dp"
                 android:layout_marginRight="5dp"
                 android:background="@drawable/round_corners"
+                android:clickable="true"
+                android:onClick="onClickSad"
                 android:orientation="vertical">
 
                 <ImageView
