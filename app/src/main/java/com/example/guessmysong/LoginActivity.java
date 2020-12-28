@@ -1,5 +1,7 @@
 package com.example.guessmysong;
 
+
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
@@ -14,6 +16,7 @@ import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
+import com.example.guessmysong.firebase.database.UserModel;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthCredential;
@@ -31,9 +34,10 @@ public class LoginActivity extends AppCompatActivity {
     EditText sEmail, sPassword;
     CardView loginButton;
     ProgressBar progressBar;
-    FirebaseAuth fAuth;
-    FirebaseDatabase database;
-    DatabaseReference ref;
+    private FirebaseAuth fAuth;
+    private FirebaseDatabase database;
+    private DatabaseReference ref;
+    UserModel mUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +50,7 @@ public class LoginActivity extends AppCompatActivity {
         loginButton = findViewById(R.id.loginButton);
         progressBar = findViewById(R.id.progressBar);
         fAuth = FirebaseAuth.getInstance();
+        mUser = new UserModel();
 
 
         loginButton.setOnClickListener(new View.OnClickListener() {
@@ -65,8 +70,6 @@ public class LoginActivity extends AppCompatActivity {
                     return;
                 }
 
-               // progressBar.setVisibility(View.VISIBLE);
-
                 //Authenticate the user
 
 
@@ -74,11 +77,12 @@ public class LoginActivity extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()){
-                            //int index = email.indexOf('@');
-                           // String email_tr = email.substring(0,index);
-                            Toast.makeText(LoginActivity.this, "Logged in: " + email, Toast.LENGTH_SHORT).show();
-                            Intent intent = new Intent(getApplicationContext(), MainPage.class);
-                            intent.putExtra("Email", email.trim());
+                            int index = email.indexOf('@');
+                            String userName = email.substring(0,index);
+                            mUser.setUsername(userName);
+                            Toast.makeText(LoginActivity.this, "Logged in: " + mUser.getUsername(), Toast.LENGTH_SHORT).show();
+                            Intent intent = new Intent(getApplicationContext(), MainMenu.class);
+                            intent.putExtra("Email", userName.trim());
                             startActivity(intent);
                             finish();
                         }else{
@@ -87,17 +91,8 @@ public class LoginActivity extends AppCompatActivity {
                     }
                 });
 
-
             }
         });
-
-
-
-
-
     }
-
-
-
 
 }

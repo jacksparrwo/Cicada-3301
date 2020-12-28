@@ -83,7 +83,7 @@ public class RegisterActivity extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()){
                             Toast.makeText(RegisterActivity.this, "User created: " + username, Toast.LENGTH_SHORT).show();
-                            Intent intent = new Intent(getApplicationContext(), MainPage.class);
+                            Intent intent = new Intent(getApplicationContext(), MainMenu.class);
                             intent.putExtra("Username", username);
                             startActivity(intent);
 
