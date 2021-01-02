@@ -4,7 +4,15 @@ import com.example.guessmysong.firebase.IDatabaseData;
 
 public enum EMusicTypes implements IDatabaseData {
     ROCK,
-    JAZZ;
+    JAZZ,
+    LOVE,
+    SHOWER,
+    PARTY,
+    SUMMER,
+    OLDIE,
+    KIDS,
+    SAD,
+    CHRISTMAS;
 
     @Override
     public String getName() {

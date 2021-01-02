@@ -1,14 +1,13 @@
 package com.example.guessmysong;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 
-public class Xmas extends AppCompatActivity {
+import androidx.appcompat.app.AppCompatActivity;
 
+public class SongChoice extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_xmas);
+        setContentView(R.layout.activity_listsongssingle);
     }
 }

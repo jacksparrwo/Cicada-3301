@@ -42,10 +42,14 @@ public class MainMenu extends AppCompatActivity {
     }
 
     public void startOnClick(View view) {
-        startActivity(new Intent(MainMenu.this, MainPage.class));
+        startActivity(new Intent(MainMenu.this, GameModes.class));
     }
 
     public void achievementsOnClick(View view) {
+    }
+
+    public void profileOnClick(View view) {
+
     }
 
     public void optionsOnClick(View view) {

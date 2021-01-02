@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bg6"
-    tools:context=".Xmas">
+    tools:context=".SinglePlayerSong">
 
     <TextView
         android:layout_width="wrap_content"
@@ -14,7 +14,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="25dp"
         android:fontFamily="cursive"
-        android:text="Let's sing!"
+        android:text="@string/let_s_sing"
         android:textAlignment="inherit"
         android:textColor="@android:color/white"
         android:textSize="36sp" />
@@ -22,26 +22,48 @@
     <LinearLayout
         android:id="@+id/environment"
         android:layout_width="302dp"
-        android:layout_height="371dp"
+        android:layout_height="300dp"
         android:layout_alignParentTop="true"
         android:layout_centerInParent="true"
-        android:layout_marginTop="87dp"
+        android:layout_marginTop="128dp"
         android:background="#80FFFFFF"
         android:orientation="vertical">
 
+        <ImageView
+            android:id="@+id/christmasBlack"
+            android:layout_width="46dp"
+            android:layout_height="48dp"
+            android:layout_margin="10dp"
+            android:src="@drawable/ic_christmas_black_2" />
+
+
     </LinearLayout>
 
+    <EditText
+        android:id="@+id/songName"
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:layout_below="@id/environment"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:ems="15"
+        android:background="#11000000"
+        android:inputType="text"
+        android:hint="Song Title..."
+        android:textSize="16sp"
+        android:textColor="#3a3333" />
+
     <androidx.cardview.widget.CardView
-        android:id="@+id/loginButton"
+        android:id="@+id/checkButton"
         android:layout_width="100dp"
         android:layout_height="50dp"
         android:layout_centerHorizontal="true"
-        android:layout_below="@id/environment"
+        android:layout_below="@id/songName"
         android:layout_marginTop="28dp"
         app:cardBackgroundColor="#11000000"
         app:cardElevation="10dp"
         app:cardCornerRadius="25dp"
-        android:onClick="onClick"
+        android:onClick="onClickCheck"
         android:clickable="true"
         >
 
@@ -50,7 +72,7 @@
             android:layout_height="match_parent">
 
             <TextView
-                android:id="@+id/login"
+                android:id="@+id/check"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
@@ -60,6 +82,17 @@
         </RelativeLayout>
     </androidx.cardview.widget.CardView>
 
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="38dp"
+        android:layout_height="48dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="43dp"
+        android:clickable="true"
+        android:onClick="changeMusicOnClick"
+        app:srcCompat="?attr/actionModePasteDrawable" />
 
 
 </RelativeLayout>
