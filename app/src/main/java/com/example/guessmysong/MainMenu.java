@@ -49,7 +49,8 @@ public class MainMenu extends AppCompatActivity {
     }
 
     public void profileOnClick(View view) {
-
+        Intent profile = new Intent(this, ProfilePage.class);
+        startActivity(profile);
     }
 
     public void optionsOnClick(View view) {
