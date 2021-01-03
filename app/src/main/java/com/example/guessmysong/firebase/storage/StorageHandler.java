@@ -104,4 +104,19 @@ public class StorageHandler {
 
         return res;
     }
+
+    public boolean checkMediaPlayerIsPlaying(){
+        boolean playing = false;
+        if(mediaPlayer.isPlaying())
+            playing = true;
+        return playing;
+    }
+
+    public void startMediaPlayer(){
+        if(!mediaPlayer.isPlaying())
+            mediaPlayer.start();
+    }
+    public String getCurrentSong(){
+        return currentSong;
+    }
 }
