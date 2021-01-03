@@ -18,14 +18,25 @@ import java.util.Random;
 
 public class StorageHandler {
 
+    public interface IListenerType {
+        public void onObjectReady(String title);
+        public void onDataLoaded(String data);
+    }
+
     private StorageReference mStorage;
     private static StorageHandler mStorageInstance = null;
     private List<StorageReference> mItem = null;
-    private String currentSong = null;
+    private String currentSong = "";
     private MediaPlayer mediaPlayer = new MediaPlayer();
+    private IListenerType listener;
 
     private StorageHandler() {
         mStorage = FirebaseStorage.getInstance("gs://universityproject-2b5cd.appspot.com").getReference();
+        this.listener = null;
+    }
+
+    public void setListener(IListenerType listener) {
+        this.listener = listener;
     }
 
     public static StorageHandler getInstance() {
@@ -68,6 +79,11 @@ public class StorageHandler {
                 int index = random.nextInt(numberOfItems);
                 String path = listResult.getItems().get(index).toString();
                 currentSong = path.substring("gs://universityproject-2b5cd.appspot.com".length() + "/".length() + type.length() + "/".length());
+
+                if (listener != null) {
+                    listener.onDataLoaded(currentSong); // <---- fire listener here
+                }
+
                 String modifPath = path.substring("gs://universityproject-2b5cd.appspot.com".length());
                 mStorage.child(modifPath).getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
                     @Override
@@ -119,4 +135,5 @@ public class StorageHandler {
     public String getCurrentSong(){
         return currentSong;
     }
+
 }

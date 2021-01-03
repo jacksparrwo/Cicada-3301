@@ -18,7 +18,6 @@ public class SinglePlayerSong extends AppCompatActivity {
     EditText songName = null;
     TextView lyrics;
 
-
     String [] christmaslyricsArray={" I don't want a lot for \uD83C\uDF84\n There is just ☝ thing I need\n I don't care about the \uD83C\uDF81 \uD83C\uDF81\n Underneath the \uD83C\uDF84",
             " It's beginning to \uD83D\uDC40 a lot like \uD83C\uDF84\n Everywhere you \uD83D\uDEB6",
             " I wanna wish you a \uD83E\uDD17  \uD83C\uDF84\n I wanna wish you a \uD83E\uDD17  \uD83C\uDF84\n I wanna wish you a \uD83E\uDD17  \uD83C\uDF84\n From the ⬇️ of my \uD83D\uDC97",
@@ -70,7 +69,7 @@ public class SinglePlayerSong extends AppCompatActivity {
             img.setImageResource(R.drawable.ic_action_sad_black);
         }
 
-        if (!mStorage.checkMediaPlayerIsPlaying()) {
+        if(!mStorage.checkMediaPlayerIsPlaying()) {
             mStorage.startMediaPlayer();
         }
         showLyrics();
@@ -88,54 +87,67 @@ public class SinglePlayerSong extends AppCompatActivity {
     }
 
     public void showLyrics(){
-        if(mStorage.getCurrentSong().equals("all i want for christmas")){
-            lyrics.setText(christmaslyricsArray[0]);
-        }
-        if(mStorage.getCurrentSong().equals("beginning to look a lot like christmas")){
-            lyrics.setText(christmaslyricsArray[1]);
-        }
-        if(mStorage.getCurrentSong().equals("feliz navidad")){
-            lyrics.setText(christmaslyricsArray[2]);
-        }
-        if(mStorage.getCurrentSong().equals("holly jolly")){
-            lyrics.setText(christmaslyricsArray[3]);
-        }
-        if(mStorage.getCurrentSong().equals("home for christmas")){
-            lyrics.setText(christmaslyricsArray[4]);
-        }
-        if(mStorage.getCurrentSong().equals("jingle bell rock")){
-            lyrics.setText(christmaslyricsArray[5]);
-        }
-        if(mStorage.getCurrentSong().equals("last christmas")){
-            lyrics.setText(christmaslyricsArray[6]);
-        }
-        if(mStorage.getCurrentSong().equals("let it snow")){
-            lyrics.setText(christmaslyricsArray[7]);
-        }
-        if(mStorage.getCurrentSong().equals("mistletoe")){
-            lyrics.setText(christmaslyricsArray[8]);
-        }
-        if(mStorage.getCurrentSong().equals("rockin around the christmas tree")){
-            lyrics.setText(christmaslyricsArray[9]);
-        }
-        if(mStorage.getCurrentSong().equals("rudolph")){
-            lyrics.setText(christmaslyricsArray[10]);
-        }
-        if(mStorage.getCurrentSong().equals("santa claus is coming to town")){
-            lyrics.setText(christmaslyricsArray[11]);
-        }
-        if(mStorage.getCurrentSong().equals("santa tell me")){
-            lyrics.setText(christmaslyricsArray[12]);
-        }
-        if(mStorage.getCurrentSong().equals("shake up christmas")){
-            lyrics.setText(christmaslyricsArray[13]);
-        }
-        if(mStorage.getCurrentSong().equals("so this is christmas")){
-            lyrics.setText(christmaslyricsArray[14]);
-        }
-        if(mStorage.getCurrentSong().equals("white christmas")){
-            lyrics.setText(christmaslyricsArray[15]);
-        }
+        mStorage.setListener(new StorageHandler.IListenerType() {
+            @Override
+            public void onObjectReady(String title) {
+
+            }
+
+            @Override
+            public void onDataLoaded(String data) {
+                if(data.equals("all_i_want_for_christmas.mp3")){
+                    lyrics.setText(christmaslyricsArray[0]);
+                }
+                else if(data.equals("beginning_to_look_a_lot_like_christmas.mp3")){
+                    lyrics.setText(christmaslyricsArray[1]);
+                }
+                else if(data.equals("feliz_navidad.mp3")){
+                    lyrics.setText(christmaslyricsArray[2]);
+                }
+                else if(data.equals("holly_jolly.mp3")){
+                    lyrics.setText(christmaslyricsArray[3]);
+                }
+                else if(data.equals("home_for_christmas.mp3")){
+                    lyrics.setText(christmaslyricsArray[4]);
+                }
+                else if(data.equals("jingle_bell_rock.mp3")){
+                    lyrics.setText(christmaslyricsArray[5]);
+                }
+                else if(data.equals("last_christmas.mp3")){
+                    lyrics.setText(christmaslyricsArray[6]);
+                }
+                else if(data.equals("let_it_snow.mp3")){
+                    lyrics.setText(christmaslyricsArray[7]);
+                }
+                else if(data.equals("mistletoe.mp3")){
+                    lyrics.setText(christmaslyricsArray[8]);
+                }
+                else if(data.equals("rockin_around_the_christmas_tree.mp3")){
+                    lyrics.setText(christmaslyricsArray[9]);
+                }
+                else if(data.equals("rudolph.mp3")){
+                    lyrics.setText(christmaslyricsArray[10]);
+                }
+                else if(data.equals("santa_claus_is_coming_to_town.mp3")){
+                    lyrics.setText(christmaslyricsArray[11]);
+                }
+                else if(data.equals("santa_tell_me.mp3")){
+                    lyrics.setText(christmaslyricsArray[12]);
+                }
+                else if(data.equals("shake_up_christmas.mp3")){
+                    lyrics.setText(christmaslyricsArray[13]);
+                }
+                else if(data.equals("so_this_is_christmas.mp3")){
+                    lyrics.setText(christmaslyricsArray[14]);
+                }
+                else if(data.equals("white_christmas.mp3")){
+                    lyrics.setText(christmaslyricsArray[15]);
+                } else {
+                    lyrics.setText("buba");
+                }
+            }
+        });
+
     }
 
     public void onClickCheck(View v){
