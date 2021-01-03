@@ -5,6 +5,7 @@ import android.net.Uri;
 
 import androidx.annotation.NonNull;
 
+import com.example.guessmysong.MainActivity;
 import com.example.guessmysong.firebase.IDatabaseData;
 import com.example.guessmysong.firebase.database.UserRewardSystem;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -32,10 +33,12 @@ public class StorageHandler {
     private IListenerType listener;
     private UserRewardSystem rewardSystem;
     private String songType = "";
+    private long songIndex = 0;
+    private boolean guessed = false;
 
     private StorageHandler() {
         this.mStorage = FirebaseStorage.getInstance("gs://universityproject-2b5cd.appspot.com").getReference();
-        this.rewardSystem = new UserRewardSystem();
+        this.rewardSystem = UserRewardSystem.getInstance();
         this.listener = null;
     }
 
@@ -119,8 +122,9 @@ public class StorageHandler {
     public boolean CheckSong(String song) {
         boolean res = false;
 
-        if(song.replaceAll(" ", "_").equals(currentSong.replace(".mp3", ""))) {
+        if(song.replaceAll(" ", "_").equals(currentSong.replace(".mp3", "")) && (false == guessed)) {
             UpdateUserRewards();
+            guessed = true;
             res = true;
         }
 
@@ -128,7 +132,9 @@ public class StorageHandler {
     }
 
     private void UpdateUserRewards() {
-
+        MainActivity.UserRef.child("experience").setValue(rewardSystem.UpdateUserExp());
+        MainActivity.UserRef.child("level").setValue(rewardSystem.UpdateUserLevel());
+        MainActivity.UserRef.child("totalexperience").setValue(rewardSystem.GetUserTotalExp());
     }
 
     public boolean checkMediaPlayerIsPlaying(){
@@ -141,9 +147,6 @@ public class StorageHandler {
     public void startMediaPlayer(){
         if(!mediaPlayer.isPlaying())
             mediaPlayer.start();
-    }
-    public String getCurrentSong(){
-        return currentSong;
     }
 
 }

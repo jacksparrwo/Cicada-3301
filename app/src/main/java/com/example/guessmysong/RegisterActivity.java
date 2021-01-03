@@ -80,6 +80,7 @@ public class RegisterActivity extends AppCompatActivity {
                 ref.child("usernames").child(username).child("categorysongsguessednumbers").child("oldie").setValue(s);
                 ref.child("usernames").child(username).child("categorysongsguessednumbers").child("kids").setValue(s);
                 ref.child("usernames").child(username).child("categorysongsguessednumbers").child("sad").setValue(s);
+                ref.child("usernames").child(username).child("totalexperience").setValue(0);
 
                 if(TextUtils.isEmpty(email)){
                     sEmail.setError("Email is required!");
