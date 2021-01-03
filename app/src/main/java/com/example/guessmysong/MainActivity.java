@@ -27,6 +27,11 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FacebookAuthProvider;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -40,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
     private TextView txtName, txtPassword;
     private FirebaseAuth mAuth;
     private CallbackManager callbackManager;
+    public static DatabaseReference UserRef = null;
     FirebaseAuth.AuthStateListener mAuthListener;
 
     String TAG = "MainActivity";
@@ -174,6 +180,20 @@ public class MainActivity extends AppCompatActivity {
     public void updateUI(FirebaseUser user){
 
         if (user != null) {
+            if(null == UserRef) {
+                FirebaseDatabase.getInstance().getReference().child("credentials").child("usernames").orderByChild("email").equalTo(user.getEmail().toString()).addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        UserRef = FirebaseDatabase.getInstance().getReference().child("credentials").child("usernames").child(snapshot.getValue().toString().substring(1, snapshot.getValue().toString().substring(1).indexOf('{')));
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+                    }
+                });
+            }
+
             int index = user.getEmail().indexOf('@');
             String displayName = user.getEmail().substring(0,index);
             Toast.makeText(this, displayName + " Signed in successfully", Toast.LENGTH_LONG).show();

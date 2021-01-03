@@ -6,6 +6,7 @@ import android.net.Uri;
 import androidx.annotation.NonNull;
 
 import com.example.guessmysong.firebase.IDatabaseData;
+import com.example.guessmysong.firebase.database.UserRewardSystem;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.storage.FirebaseStorage;
@@ -29,9 +30,12 @@ public class StorageHandler {
     private String currentSong = "";
     private MediaPlayer mediaPlayer = new MediaPlayer();
     private IListenerType listener;
+    private UserRewardSystem rewardSystem;
+    private String songType = "";
 
     private StorageHandler() {
-        mStorage = FirebaseStorage.getInstance("gs://universityproject-2b5cd.appspot.com").getReference();
+        this.mStorage = FirebaseStorage.getInstance("gs://universityproject-2b5cd.appspot.com").getReference();
+        this.rewardSystem = new UserRewardSystem();
         this.listener = null;
     }
 
@@ -70,6 +74,7 @@ public class StorageHandler {
     public void PlayRandomSong(final String type) {
         InitMediaPlayer();
         final StorageReference currentFolder = mStorage.child(type);
+        songType = type;
 
         currentFolder.listAll().addOnSuccessListener(new OnSuccessListener<ListResult>() {
             @Override
@@ -115,10 +120,15 @@ public class StorageHandler {
         boolean res = false;
 
         if(song.replaceAll(" ", "_").equals(currentSong.replace(".mp3", ""))) {
+            UpdateUserRewards();
             res = true;
         }
 
         return res;
+    }
+
+    private void UpdateUserRewards() {
+
     }
 
     public boolean checkMediaPlayerIsPlaying(){

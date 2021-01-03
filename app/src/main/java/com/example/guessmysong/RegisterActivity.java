@@ -1,18 +1,16 @@
 package com.example.guessmysong;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.cardview.widget.CardView;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
-import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -49,10 +47,39 @@ public class RegisterActivity extends AppCompatActivity {
                 final String email = sEmail.getText().toString().trim();
                 final String username = sUsername.getText().toString().trim();
                 String password = sPassword.getText().toString().trim();
+                String s = "";
+
                 ref = FirebaseDatabase.getInstance().getReference().child("credentials");
                 ref.child("usernames").child(username);
                 ref.child("usernames").child(username).child("password").setValue(password);
                 ref.child("usernames").child(username).child("email").setValue(email);
+                ref.child("usernames").child(username).child("level").setValue(0);
+                ref.child("usernames").child(username).child("experience").setValue(0);
+                ref.child("usernames").child(username).child("achievements").child("christmas").setValue(s);
+                ref.child("usernames").child(username).child("achievements").child("love").setValue(s);
+                ref.child("usernames").child(username).child("achievements").child("shower").setValue(s);
+                ref.child("usernames").child(username).child("achievements").child("party").setValue(s);
+                ref.child("usernames").child(username).child("achievements").child("summer").setValue(s);
+                ref.child("usernames").child(username).child("achievements").child("oldie").setValue(s);
+                ref.child("usernames").child(username).child("achievements").child("kids").setValue(s);
+                ref.child("usernames").child(username).child("achievements").child("sad").setValue(s);
+                ref.child("usernames").child(username).child("songsguessed").setValue(0);
+                ref.child("usernames").child(username).child("categorysongsguessed").child("christmas").setValue(0);
+                ref.child("usernames").child(username).child("categorysongsguessed").child("love").setValue(0);
+                ref.child("usernames").child(username).child("categorysongsguessed").child("shower").setValue(0);
+                ref.child("usernames").child(username).child("categorysongsguessed").child("party").setValue(0);
+                ref.child("usernames").child(username).child("categorysongsguessed").child("summer").setValue(0);
+                ref.child("usernames").child(username).child("categorysongsguessed").child("oldie").setValue(0);
+                ref.child("usernames").child(username).child("categorysongsguessed").child("kids").setValue(0);
+                ref.child("usernames").child(username).child("categorysongsguessed").child("sad").setValue(0);
+                ref.child("usernames").child(username).child("categorysongsguessednumbers").child("christmas").setValue(s);
+                ref.child("usernames").child(username).child("categorysongsguessednumbers").child("love").setValue(s);
+                ref.child("usernames").child(username).child("categorysongsguessednumbers").child("shower").setValue(s);
+                ref.child("usernames").child(username).child("categorysongsguessednumbers").child("party").setValue(s);
+                ref.child("usernames").child(username).child("categorysongsguessednumbers").child("summer").setValue(s);
+                ref.child("usernames").child(username).child("categorysongsguessednumbers").child("oldie").setValue(s);
+                ref.child("usernames").child(username).child("categorysongsguessednumbers").child("kids").setValue(s);
+                ref.child("usernames").child(username).child("categorysongsguessednumbers").child("sad").setValue(s);
 
                 if(TextUtils.isEmpty(email)){
                     sEmail.setError("Email is required!");
