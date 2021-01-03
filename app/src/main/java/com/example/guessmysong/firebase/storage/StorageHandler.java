@@ -78,6 +78,7 @@ public class StorageHandler {
         InitMediaPlayer();
         final StorageReference currentFolder = mStorage.child(type);
         songType = type;
+        guessed = false;
 
         currentFolder.listAll().addOnSuccessListener(new OnSuccessListener<ListResult>() {
             @Override
@@ -135,6 +136,9 @@ public class StorageHandler {
         MainActivity.UserRef.child("experience").setValue(rewardSystem.UpdateUserExp());
         MainActivity.UserRef.child("level").setValue(rewardSystem.UpdateUserLevel());
         MainActivity.UserRef.child("totalexperience").setValue(rewardSystem.GetUserTotalExp());
+        MainActivity.UserRef.child("songsguessed").setValue(rewardSystem.UpdateSongsGuessed());
+        MainActivity.UserRef.child("categorysongsguessed").child(songType).setValue(rewardSystem.UpdateSongsGuessedCategory(songType));
+        MainActivity.UserRef.child("achievements").child(songType).setValue(rewardSystem.UpdateAchievementsCategory(songType));
     }
 
     public boolean checkMediaPlayerIsPlaying(){
