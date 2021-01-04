@@ -36,7 +36,7 @@ public class SinglePlayerSong extends AppCompatActivity {
             " I'm \uD83D\uDCA4 of a \uD83C\uDFD4️ \uD83C\uDF84\n Just like the ones I used to know"};
 
     String [] oldieLyricsArray={" She told my \uD83D\uDC76 we'd \uD83D\uDD7A 'til 3, then she \uD83D\uDC40 at me\n Then showed a \uD83E\uDD33 my \uD83D\uDC76 \uD83D\uDE2D his \uD83D\uDC41️\uD83D\uDC41️ were like mine (oh, no) Cause we \uD83D\uDD7A on the floor in the round, \uD83D\uDC76",
-    " \uD83D\uDCA3 ",
+    "    \uD83D\uDCA3 ",
     " I just can't get you out of my \uD83D\uDC86\u200D♀️\n \uD83D\uDC66\uD83C\uDFFC, your ❤️ is all I \uD83D\uDCAD about",
     " Put me up, put me down\n Put my \uD83D\uDC63 back on the ground\n Put me up, take my ❤ and make me \uD83D\uDE0A",
     " \uD83D\uDC83 \uD83D\uDC51",
@@ -46,8 +46,8 @@ public class SinglePlayerSong extends AppCompatActivity {
     " ➡️the \uD83C\uDF1C and \uD83D\uDD19",
     " ⏰ up before you \uD83D\uDEB6-\uD83D\uDEB6\n Don't leave me hanging on like a \uD83E\uDE80\n ⏰ up before you \uD83D\uDEB6-\uD83D\uDEB6\n I don't wanna miss it when you hit that high"};
 
-    String [] partyLyricsArray={" \uD83D\uDD18\uD83D\uDD18\uD83D\uDD18",
-    " \uD83C\uDDEB\uD83C\uDDF7 \uD83D\uDC8B",
+    String [] partyLyricsArray={"      \uD83D\uDD18\uD83D\uDD18\uD83D\uDD18",
+    "        \uD83C\uDDEB\uD83C\uDDF7 \uD83D\uDC8B",
     " It's my life\n It's now or never\n But I ain't gonna live forever\n I just want to live while I'm alive",
     " She's into superstitions\n \uD83D\uDC08\u200D⬛\uD83D\uDC08\u200D⬛ and voodoo \uD83C\uDF8E\n I feel a premonition\n That \uD83D\uDC67\uD83C\uDFFD's gonna make me fall",
     " Cause if you \uD83D\uDC4D it then you should have put a \uD83D\uDC8D on it\n If you \uD83D\uDC4D it then you shoulda put a \uD83D\uDC8D on it\n Don't be mad once you \uD83D\uDC40 that he want it\n If you \uD83D\uDC4D it then you shoulda put a \uD83D\uDC8D on it\n Oh, oh, oh"};
