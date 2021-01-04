@@ -35,6 +35,23 @@ public class SinglePlayerSong extends AppCompatActivity {
             " A very merry \uD83C\uDF84\n And a \uD83E\uDD17 \uD83C\uDF86\n Let's hope it's a good one\n Without any fears",
             " I'm \uD83D\uDCA4 of a \uD83C\uDFD4️ \uD83C\uDF84\n Just like the ones I used to know"};
 
+    String [] oldieLyricsArray={" She told my \uD83D\uDC76 we'd \uD83D\uDD7A 'til 3, then she \uD83D\uDC40 at me\n Then showed a \uD83E\uDD33 my \uD83D\uDC76 \uD83D\uDE2D his \uD83D\uDC41️\uD83D\uDC41️ were like mine (oh, no) Cause we \uD83D\uDD7A on the floor in the round, \uD83D\uDC76",
+    " \uD83D\uDCA3 ",
+    " I just can't get you out of my \uD83D\uDC86\u200D♀️\n \uD83D\uDC66\uD83C\uDFFC, your ❤️ is all I \uD83D\uDCAD about",
+    " Put me up, put me down\n Put my \uD83D\uDC63 back on the ground\n Put me up, take my ❤ and make me \uD83D\uDE0A",
+    " \uD83D\uDC83 \uD83D\uDC51",
+    " There's not a \uD83D\uDC7B out there\n No one to \uD83D\uDC42 my \uD83D\uDE4F\uD83C\uDFFB\n Gimme, gimme, gimme a \uD83E\uDD35 after \uD83C\uDF19\n Won't somebody help me chase the \uD83D\uDC7B away",
+    " Oh, I wanna \uD83D\uDC83 with somebody\n I wanna feel the \uD83D\uDD25 with somebody\n Yeah, I wanna \uD83D\uDC83 with somebody\n With somebody who ❤ me",
+    " A little bit of \uD83D\uDC67\uD83C\uDFFC is what I \uD83D\uDC40\n A little bit of \uD83D\uDC67\uD83C\uDFFE in the ☀️\n A little bit of \uD83D\uDC67\uD83C\uDFFD all \uD83C\uDF15 long\n A little bit of \uD83D\uDC67\uD83C\uDFFB, here I am\n A little bit of you makes me your \uD83E\uDD35",
+    " ➡️the \uD83C\uDF1C and \uD83D\uDD19",
+    " ⏰ up before you \uD83D\uDEB6-\uD83D\uDEB6\n Don't leave me hanging on like a \uD83E\uDE80\n ⏰ up before you \uD83D\uDEB6-\uD83D\uDEB6\n I don't wanna miss it when you hit that high"};
+
+    String [] partyLyricsArray={" \uD83D\uDD18\uD83D\uDD18\uD83D\uDD18",
+    " \uD83C\uDDEB\uD83C\uDDF7 \uD83D\uDC8B",
+    " It's my life\n It's now or never\n But I ain't gonna live forever\n I just want to live while I'm alive",
+    " She's into superstitions\n \uD83D\uDC08\u200D⬛\uD83D\uDC08\u200D⬛ and voodoo \uD83C\uDF8E\n I feel a premonition\n That \uD83D\uDC67\uD83C\uDFFD's gonna make me fall",
+    " Cause if you \uD83D\uDC4D it then you should have put a \uD83D\uDC8D on it\n If you \uD83D\uDC4D it then you shoulda put a \uD83D\uDC8D on it\n Don't be mad once you \uD83D\uDC40 that he want it\n If you \uD83D\uDC4D it then you shoulda put a \uD83D\uDC8D on it\n Oh, oh, oh"};
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -140,9 +157,52 @@ public class SinglePlayerSong extends AppCompatActivity {
                 else if(data.equals("so_this_is_christmas.mp3")){
                     lyrics.setText(christmaslyricsArray[14]);
                 }
-                else if(data.equals("white_christmas.mp3")){
-                    lyrics.setText(christmaslyricsArray[15]);
-                } else {
+                else if(data.equals("billie_jean.mp3")){
+                    lyrics.setText(oldieLyricsArray[0]);
+                }
+                else if(data.equals("bomba.mp3")){
+                    lyrics.setText(oldieLyricsArray[1]);
+                }
+                else if(data.equals("can't_get_you_out_of_my_head.mp3")){
+                    lyrics.setText(oldieLyricsArray[2]);
+                }
+                else if(data.equals("coco_jambo.mp3")){
+                    lyrics.setText(oldieLyricsArray[3]);
+                }
+                else if(data.equals("dancing_queen.mp3")){
+                    lyrics.setText(oldieLyricsArray[4]);
+                }
+                else if(data.equals("gimme_gimme_gimme.mp3")){
+                    lyrics.setText(oldieLyricsArray[5]);
+                }
+                else if(data.equals("i_wanna_dance_with_somebody.mp3")){
+                    lyrics.setText(oldieLyricsArray[6]);
+                }
+                else if(data.equals("mambo_no_5.mp3")){
+                    lyrics.setText(oldieLyricsArray[7]);
+                }
+                else if(data.equals("to_the_moon_and_back.mp3")){
+                    lyrics.setText(oldieLyricsArray[8]);
+                }
+                else if(data.equals("wake_me_up.mp3")){
+                    lyrics.setText(oldieLyricsArray[9]);
+                }
+                else if(data.equals("buttons.mp3")){
+                    lyrics.setText(partyLyricsArray[0]);
+                }
+                else if(data.equals("french_kiss.mp3")){
+                    lyrics.setText(partyLyricsArray[1]);
+                }
+                else if(data.equals("it's_my_life.mp3")){
+                    lyrics.setText(partyLyricsArray[2]);
+                }
+                else if(data.equals("livin_la_vida_loca.mp3")){
+                    lyrics.setText(partyLyricsArray[3]);
+                }
+                else if(data.equals("single_ladies.mp3")){
+                    lyrics.setText(partyLyricsArray[4]);
+                }
+                else {
                     lyrics.setText("buba");
                 }
             }
