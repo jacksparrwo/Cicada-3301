@@ -23,6 +23,7 @@
         <activity android:name=".Categories" />
         <activity android:name=".SettingsPage" />
         <activity android:name=".ProfilePage" />
+        <activity android:name=".AchievementsPage"/>
         <activity android:name=".SongChoice"/>
         <activity android:name=".GameModes"/>
         <activity android:name=".LoginActivity" />

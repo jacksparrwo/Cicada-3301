@@ -41,8 +41,6 @@ public class ProfilePage extends AppCompatActivity {
                 userName.setText("Data of user: " + snapshot.getKey());
 
                 for(DataSnapshot child : snapshot.getChildren()) {
-                    int i=0;
-                    i++;
                     if(child.getKey().equals("level")) {
                         level.setText("Level: " + child.getValue().toString());
                     } else if(child.getKey().equals("experience")) {
