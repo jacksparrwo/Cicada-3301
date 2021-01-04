@@ -35,6 +35,7 @@ public class UserRewardSystem {
     private long songsGuessed;
     private long []categorySongsGuessed = new long[8];
     private ArrayList<String> achievements = new ArrayList<>(8);
+    private ArrayList<String> songlistIndexes = new ArrayList<>(8);
     private static UserRewardSystem mUserRwSysInstance = null;
 
     private UserRewardSystem() {
@@ -105,6 +106,21 @@ public class UserRewardSystem {
                 for(DataSnapshot child: snapshot.getChildren()) {
                     String rez = (String) child.getValue();
                     achievements.add(rez);
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+        MainActivity.UserRef.child("categorysongsguessednumbers").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                for(DataSnapshot child: snapshot.getChildren()) {
+                    String rez = (String) child.getValue();
+                    songlistIndexes.add(rez);
                 }
             }
 
@@ -219,5 +235,72 @@ public class UserRewardSystem {
         }
 
         return this.achievements.get(catNum);
+    }
+
+    public String UpdateSongIndexesCategory(String category, long index, String name) {
+        int catNum = 0;
+        if(category.equals(EMusicTypes.CHRISTMAS.getName())) {
+            catNum = 0;
+        } else if(category.equals(EMusicTypes.KIDS.getName())) {
+            catNum = 1;
+        } else if(category.equals(EMusicTypes.LOVE.getName())) {
+            catNum = 2;
+        } else if(category.equals(EMusicTypes.OLDIE.getName())) {
+            catNum = 3;
+        } else if(category.equals(EMusicTypes.PARTY.getName())) {
+            catNum = 4;
+        } else if(category.equals(EMusicTypes.SAD.getName())) {
+            catNum = 5;
+        } else if(category.equals(EMusicTypes.SHOWER.getName())) {
+            catNum = 6;
+        } else if(category.equals(EMusicTypes.SUMMER.getName())) {
+            catNum = 7;
+        }
+
+        if(!this.songlistIndexes.get(catNum).contains(String.valueOf(index))) {
+            if(this.songlistIndexes.get(catNum).equals("")) {
+                this.songlistIndexes.set(catNum, String.valueOf(index) + " - " + name + ", ");
+            } else {
+                String s = new String(this.songlistIndexes.get(catNum));
+                String[] arrSplit = s.split(", ");
+                String constructed = "";
+                int minIndex = 0;
+                boolean foundIndex = false;
+                boolean smallerThanFirst = false;
+
+                for(int i=0; i<arrSplit.length; i++) {
+                    long charToLong = Character.getNumericValue(arrSplit[i].charAt(0));
+                    long charToLong2 = arrSplit[i].charAt(1) == ' ' ? -1 : Character.getNumericValue(arrSplit[i].charAt(1));
+                    charToLong = charToLong2 == -1 ? charToLong : charToLong * 10 + charToLong2;
+
+                    constructed += arrSplit[i] + ", ";
+                    if((index < charToLong) && (smallerThanFirst == false)) {
+                        smallerThanFirst = true;
+                        constructed = String.valueOf(index) + " - " + name + ", " + constructed;
+                    } else if((charToLong < index) && (foundIndex == false) && (smallerThanFirst == false)) {
+                        if(i+1 < arrSplit.length) {
+                            long charToLongNext = Character.getNumericValue(arrSplit[i+1].charAt(0));
+                            long charToLongNext2 = arrSplit[i+1].charAt(1) == ' ' ? -1 : Character.getNumericValue(arrSplit[i+1].charAt(1));
+                            charToLongNext = charToLongNext2 == - 1 ? charToLongNext : charToLongNext * 10 + charToLongNext2;
+
+                            if(charToLongNext > index) {
+                                constructed += String.valueOf(index) + " - " + name + ", ";
+                                foundIndex = true;
+                            }
+                        } else {
+                            constructed += String.valueOf(index) + " - " + name + ", ";
+                            foundIndex = true;
+                        }
+
+
+                    }
+                }
+
+                this.songlistIndexes.set(catNum, constructed);
+            }
+
+        }
+
+        return this.songlistIndexes.get(catNum);
     }
 }
