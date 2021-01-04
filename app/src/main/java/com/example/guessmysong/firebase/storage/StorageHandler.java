@@ -35,6 +35,7 @@ public class StorageHandler {
     private String songType = "";
     private long songIndex = 0;
     private boolean guessed = false;
+    private int totalNumberOfSongs = 0;
 
     private StorageHandler() {
         this.mStorage = FirebaseStorage.getInstance("gs://universityproject-2b5cd.appspot.com").getReference();
@@ -74,6 +75,54 @@ public class StorageHandler {
         mediaPlayer.reset();
     }
 
+    public void GetSongsFromCategory(String type) {
+
+        final StorageReference currentFolder = mStorage.child(type);
+        currentFolder.listAll().addOnSuccessListener(new OnSuccessListener<ListResult>() {
+            @Override
+            public void onSuccess(ListResult listResult) {
+                int numberOfItems = listResult.getItems().size();
+            }
+        });
+    }
+
+    public void PlayChosenSong(final String type, final int index) {
+        InitMediaPlayer();
+        final StorageReference currentFolder = mStorage.child(type);
+
+        currentFolder.listAll().addOnSuccessListener(new OnSuccessListener<ListResult>() {
+            @Override
+            public void onSuccess(ListResult listResult) {
+                String path = listResult.getItems().get(index).toString();
+                songIndex = index;
+                currentSong = path.substring("gs://universityproject-2b5cd.appspot.com".length() + "/".length() + type.length() + "/".length());
+
+                if (listener != null) {
+                    listener.onDataLoaded(currentSong); // <---- fire listener here
+                }
+
+                String modifPath = path.substring("gs://universityproject-2b5cd.appspot.com".length());
+                mStorage.child(modifPath).getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                    @Override
+                    public void onSuccess(Uri uri) {
+                        try {
+                            mediaPlayer.setDataSource(uri.toString());
+                            mediaPlayer.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+                                @Override
+                                public void onPrepared(MediaPlayer mp) {
+                                    mp.start();
+                                }
+                            });
+                            mediaPlayer.prepare();
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                });
+            }
+        });
+    }
+
     public void PlayRandomSong(final String type) {
         InitMediaPlayer();
         final StorageReference currentFolder = mStorage.child(type);
@@ -83,10 +132,11 @@ public class StorageHandler {
         currentFolder.listAll().addOnSuccessListener(new OnSuccessListener<ListResult>() {
             @Override
             public void onSuccess(ListResult listResult) {
-                int numberOfItems = listResult.getItems().size();
+                totalNumberOfSongs = listResult.getItems().size();
                 Random random = new Random();
-                int index = random.nextInt(numberOfItems);
+                int index = random.nextInt(totalNumberOfSongs);
                 String path = listResult.getItems().get(index).toString();
+                songIndex = index;
                 currentSong = path.substring("gs://universityproject-2b5cd.appspot.com".length() + "/".length() + type.length() + "/".length());
 
                 if (listener != null) {
@@ -139,6 +189,7 @@ public class StorageHandler {
         MainActivity.UserRef.child("songsguessed").setValue(rewardSystem.UpdateSongsGuessed());
         MainActivity.UserRef.child("categorysongsguessed").child(songType).setValue(rewardSystem.UpdateSongsGuessedCategory(songType));
         MainActivity.UserRef.child("achievements").child(songType).setValue(rewardSystem.UpdateAchievementsCategory(songType));
+        MainActivity.UserRef.child("categorysongsguessednumbers").child(songType).setValue(rewardSystem.UpdateSongIndexesCategory(songType, songIndex, currentSong.replaceAll("_", " ").replace(".mp3", "")));
     }
 
     public boolean checkMediaPlayerIsPlaying(){
@@ -151,6 +202,10 @@ public class StorageHandler {
     public void startMediaPlayer(){
         if(!mediaPlayer.isPlaying())
             mediaPlayer.start();
+    }
+
+    public int GetTotalNumberOfSongs() {
+        return totalNumberOfSongs;
     }
 
 }

@@ -1,5 +1,6 @@
 package com.example.guessmysong;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -222,6 +223,8 @@ public class SinglePlayerSong extends AppCompatActivity {
     }
 
     public void changeMusicOnClick(View v) {
-
+        Intent songChoice = new Intent(this, SongChoice.class);
+        songChoice.putExtra("category", getIntent().getStringExtra("category"));
+        startActivity(songChoice);
     }
 }
