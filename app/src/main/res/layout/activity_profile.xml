@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg6"
+    tools:context=".ProfilePage">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="25dp"
+        android:fontFamily="cursive"
+        android:text="@string/let_s_sing"
+        android:textAlignment="inherit"
+        android:textColor="@android:color/white"
+        android:textSize="36sp" />
+
+    <TextView
+        android:id="@+id/userData"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="70dp"
+        android:fontFamily="serif-monospace"
+        android:text="Data of user: "
+        android:textAlignment="inherit"
+        android:textColor="@android:color/white"
+        android:textSize="18sp" />
+
+    <LinearLayout
+        android:id="@+id/levelLayout2"
+        android:layout_below="@id/userData"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingTop="20dp">
+
+        <TextView
+            android:id="@+id/levelLayoutText2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fontFamily="serif-monospace"
+            android:text="@string/level"
+            android:textAlignment="inherit"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            android:gravity="center_horizontal"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/experienceLayout"
+        android:layout_below="@id/levelLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingTop="10dp">
+
+        <TextView
+            android:id="@+id/experienceLayoutText"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fontFamily="serif-monospace"
+            android:text="Experience: "
+            android:textAlignment="inherit"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            android:gravity="center_horizontal"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/totExperienceLayout"
+        android:layout_below="@id/experienceLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingTop="10dp">
+
+        <TextView
+            android:id="@+id/totExperienceLayoutText"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fontFamily="serif-monospace"
+            android:text="Total experience: "
+            android:textAlignment="inherit"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            android:gravity="center_horizontal"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/totalSongsGuessed"
+        android:layout_below="@id/totExperienceLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingTop="10dp">
+
+        <TextView
+            android:id="@+id/totalSongsGuessedText"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fontFamily="serif-monospace"
+            android:text="Total songs guessed: "
+            android:textAlignment="inherit"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            android:gravity="center_horizontal"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/christmasSong"
+        android:layout_below="@+id/totalSongsGuessed"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingTop="10dp">
+
+        <TextView
+            android:id="@+id/christmasSongText"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fontFamily="serif-monospace"
+            android:text="Christmas songs: "
+            android:textAlignment="inherit"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            android:gravity="center_horizontal"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/kidsSong"
+        android:layout_below="@+id/christmasSong"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingTop="10dp">
+
+        <TextView
+            android:id="@+id/kidsSongText"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fontFamily="serif-monospace"
+            android:text="Kids songs: "
+            android:textAlignment="inherit"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            android:gravity="center_horizontal"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/loveSong"
+        android:layout_below="@+id/kidsSong"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingTop="10dp">
+
+        <TextView
+            android:id="@+id/loveSongText"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fontFamily="serif-monospace"
+            android:text="Love songs: "
+            android:textAlignment="inherit"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            android:gravity="center_horizontal"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/oldieSong"
+        android:layout_below="@+id/loveSong"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingTop="10dp">
+
+        <TextView
+            android:id="@+id/oldieSongText"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fontFamily="serif-monospace"
+            android:text="Oldie songs: "
+            android:textAlignment="inherit"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            android:gravity="center_horizontal"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/partySong"
+        android:layout_below="@+id/oldieSong"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingTop="10dp">
+
+        <TextView
+            android:id="@+id/partySongText"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fontFamily="serif-monospace"
+            android:text="Party songs: "
+            android:textAlignment="inherit"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            android:gravity="center_horizontal"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/sadSong"
+        android:layout_below="@+id/partySong"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingTop="10dp">
+
+        <TextView
+            android:id="@+id/sadSongText"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fontFamily="serif-monospace"
+            android:text="Sad songs: "
+            android:textAlignment="inherit"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            android:gravity="center_horizontal"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/showerSong"
+        android:layout_below="@+id/sadSong"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingTop="10dp">
+
+        <TextView
+            android:id="@+id/showerSongText"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fontFamily="serif-monospace"
+            android:text="Shower songs: "
+            android:textAlignment="inherit"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            android:gravity="center_horizontal"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/summerSong"
+        android:layout_below="@+id/showerSong"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingTop="10dp">
+
+        <TextView
+            android:id="@+id/summerSongText"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fontFamily="serif-monospace"
+            android:text="Summer songs: "
+            android:textAlignment="inherit"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            android:gravity="center_horizontal"
+            />
+    </LinearLayout>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/backButton"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/summerSong"
+        android:layout_marginTop="45dp"
+        app:cardBackgroundColor="#11000000"
+        app:cardElevation="10dp"
+        app:cardCornerRadius="25dp"
+        android:onClick="onClickBack"
+        android:clickable="true"
+        >
+        <!-- #71c7ec  cardBackgroundColor-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="Back"
+                android:textColor="#fff"
+                android:textSize="18sp" />
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>

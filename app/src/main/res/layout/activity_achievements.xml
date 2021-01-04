@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg6"
+    tools:context=".AchievementsPage">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="cursive"
+        android:layout_marginTop="25dp"
+        android:text="@string/let_s_sing"
+        android:textAlignment="inherit"
+        android:textColor="@android:color/white"
+        android:textSize="36sp"
+        android:layout_centerHorizontal="true"
+        />
+
+    <TextView
+        android:id="@+id/userData2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="70dp"
+        android:fontFamily="serif-monospace"
+        android:text="Achievements of user: "
+        android:textAlignment="inherit"
+        android:textColor="@android:color/white"
+        android:textSize="18sp" />
+
+    <LinearLayout
+        android:id="@+id/christmasAchievement"
+        android:layout_below="@id/userData2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingTop="20dp">
+
+        <TextView
+            android:id="@+id/christmasAchievementText"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fontFamily="serif-monospace"
+            android:text="Christmas: "
+            android:textAlignment="inherit"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            android:layout_marginLeft="10sp"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/kidsAchievements"
+        android:layout_below="@id/christmasAchievement"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingTop="10dp">
+
+        <TextView
+            android:id="@+id/kidsAchievementsText"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fontFamily="serif-monospace"
+            android:text="Kids: "
+            android:textAlignment="inherit"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            android:layout_marginLeft="10sp"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/loveAchievements"
+        android:layout_below="@id/kidsAchievements"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingTop="10dp">
+
+        <TextView
+            android:id="@+id/loveAchievementsText"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fontFamily="serif-monospace"
+            android:text="Love: "
+            android:textAlignment="inherit"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            android:layout_marginLeft="10sp"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/oldieAchievements"
+        android:layout_below="@id/loveAchievements"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingTop="10dp">
+
+        <TextView
+            android:id="@+id/oldieAchievementsText"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fontFamily="serif-monospace"
+            android:text="Oldie: "
+            android:textAlignment="inherit"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            android:layout_marginLeft="10sp"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/partyAchievements"
+        android:layout_below="@id/oldieAchievements"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingTop="10dp">
+
+        <TextView
+            android:id="@+id/partyAchievementsText"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fontFamily="serif-monospace"
+            android:text="Party: "
+            android:textAlignment="inherit"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            android:layout_marginLeft="10sp"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/sadAchievements"
+        android:layout_below="@id/partyAchievements"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingTop="10dp">
+
+        <TextView
+            android:id="@+id/sadAchievementsText"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fontFamily="serif-monospace"
+            android:text="Sad: "
+            android:textAlignment="inherit"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            android:layout_marginLeft="10sp"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/showerAchievements"
+        android:layout_below="@id/sadAchievements"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingTop="10dp">
+
+        <TextView
+            android:id="@+id/showerAchievementsText"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fontFamily="serif-monospace"
+            android:text="Shower: "
+            android:textAlignment="inherit"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            android:layout_marginLeft="10sp"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/summerAchievements"
+        android:layout_below="@id/showerAchievements"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingTop="10dp">
+
+        <TextView
+            android:id="@+id/summerAchievementsText"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fontFamily="serif-monospace"
+            android:text="Summer: "
+            android:textAlignment="inherit"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            android:layout_marginLeft="10sp"
+            />
+    </LinearLayout>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/backButton"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/summerAchievements"
+        android:layout_marginTop="45dp"
+        app:cardBackgroundColor="#11000000"
+        app:cardElevation="10dp"
+        app:cardCornerRadius="25dp"
+        android:onClick="onClickBack"
+        android:clickable="true"
+        >
+        <!-- #71c7ec  cardBackgroundColor-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="Back"
+                android:textColor="#fff"
+                android:textSize="18sp" />
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>

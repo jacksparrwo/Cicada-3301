@@ -5,7 +5,9 @@ import android.net.Uri;
 
 import androidx.annotation.NonNull;
 
+import com.example.guessmysong.MainActivity;
 import com.example.guessmysong.firebase.IDatabaseData;
+import com.example.guessmysong.firebase.database.UserRewardSystem;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.storage.FirebaseStorage;
@@ -18,14 +20,30 @@ import java.util.Random;
 
 public class StorageHandler {
 
+    public interface IListenerType {
+        public void onObjectReady(String title);
+        public void onDataLoaded(String data);
+    }
+
     private StorageReference mStorage;
     private static StorageHandler mStorageInstance = null;
     private List<StorageReference> mItem = null;
-    private String currentSong = null;
+    private String currentSong = "";
     private MediaPlayer mediaPlayer = new MediaPlayer();
+    private IListenerType listener;
+    private UserRewardSystem rewardSystem;
+    private String songType = "";
+    private long songIndex = 0;
+    private boolean guessed = false;
 
     private StorageHandler() {
-        mStorage = FirebaseStorage.getInstance("gs://universityproject-2b5cd.appspot.com").getReference();
+        this.mStorage = FirebaseStorage.getInstance("gs://universityproject-2b5cd.appspot.com").getReference();
+        this.rewardSystem = UserRewardSystem.getInstance();
+        this.listener = null;
+    }
+
+    public void setListener(IListenerType listener) {
+        this.listener = listener;
     }
 
     public static StorageHandler getInstance() {
@@ -59,6 +77,8 @@ public class StorageHandler {
     public void PlayRandomSong(final String type) {
         InitMediaPlayer();
         final StorageReference currentFolder = mStorage.child(type);
+        songType = type;
+        guessed = false;
 
         currentFolder.listAll().addOnSuccessListener(new OnSuccessListener<ListResult>() {
             @Override
@@ -68,6 +88,11 @@ public class StorageHandler {
                 int index = random.nextInt(numberOfItems);
                 String path = listResult.getItems().get(index).toString();
                 currentSong = path.substring("gs://universityproject-2b5cd.appspot.com".length() + "/".length() + type.length() + "/".length());
+
+                if (listener != null) {
+                    listener.onDataLoaded(currentSong); // <---- fire listener here
+                }
+
                 String modifPath = path.substring("gs://universityproject-2b5cd.appspot.com".length());
                 mStorage.child(modifPath).getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
                     @Override
@@ -98,11 +123,22 @@ public class StorageHandler {
     public boolean CheckSong(String song) {
         boolean res = false;
 
-        if(song.replaceAll(" ", "_").equals(currentSong.replace(".mp3", ""))) {
+        if(song.replaceAll(" ", "_").equals(currentSong.replace(".mp3", "")) && (false == guessed)) {
+            UpdateUserRewards();
+            guessed = true;
             res = true;
         }
 
         return res;
+    }
+
+    private void UpdateUserRewards() {
+        MainActivity.UserRef.child("experience").setValue(rewardSystem.UpdateUserExp());
+        MainActivity.UserRef.child("level").setValue(rewardSystem.UpdateUserLevel());
+        MainActivity.UserRef.child("totalexperience").setValue(rewardSystem.GetUserTotalExp());
+        MainActivity.UserRef.child("songsguessed").setValue(rewardSystem.UpdateSongsGuessed());
+        MainActivity.UserRef.child("categorysongsguessed").child(songType).setValue(rewardSystem.UpdateSongsGuessedCategory(songType));
+        MainActivity.UserRef.child("achievements").child(songType).setValue(rewardSystem.UpdateAchievementsCategory(songType));
     }
 
     public boolean checkMediaPlayerIsPlaying(){
@@ -116,7 +152,5 @@ public class StorageHandler {
         if(!mediaPlayer.isPlaying())
             mediaPlayer.start();
     }
-    public String getCurrentSong(){
-        return currentSong;
-    }
+
 }

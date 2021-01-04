@@ -4,7 +4,6 @@ import java.util.List;
 
 public class UserModel {
 
-
     private String username;
     private String password;
     private String gender;
