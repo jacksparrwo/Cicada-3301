@@ -173,7 +173,7 @@ public class StorageHandler {
     public boolean CheckSong(String song) {
         boolean res = false;
 
-        if(song.replaceAll(" ", "_").equals(currentSong.replace(".mp3", "")) && (false == guessed)) {
+        if(song.replaceAll(" ", "-").equals(currentSong.replace(".mp3", "")) && (!guessed)) {
             UpdateUserRewards();
             guessed = true;
             res = true;

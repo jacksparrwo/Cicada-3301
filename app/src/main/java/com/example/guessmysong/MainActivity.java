@@ -55,8 +55,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //mAuth.signOut();
-
         mAuth = FirebaseAuth.getInstance();
         mAuthListener = new FirebaseAuth.AuthStateListener() {
             @Override
@@ -175,6 +173,9 @@ public class MainActivity extends AppCompatActivity {
     public void registerOnClick(View view){
         startActivity(new Intent(MainActivity.this, RegisterActivity.class));
         finish();
+    }
+    public boolean isFacebookLoggedIn(){
+        return AccessToken.getCurrentAccessToken() != null;
     }
 
     public void updateUI(FirebaseUser user){

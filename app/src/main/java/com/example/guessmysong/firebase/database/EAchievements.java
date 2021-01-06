@@ -53,6 +53,6 @@ public enum EAchievements implements IDatabaseData {
 
     @Override
     public String getName() {
-        return this.toString().substring(0, 1).toUpperCase() + this.toString().substring(1).toLowerCase().replaceAll("_", " ");
+        return this.toString().substring(0, 1).toUpperCase() + this.toString().substring(1).toLowerCase().replaceAll("-", " ");
     }
 }
