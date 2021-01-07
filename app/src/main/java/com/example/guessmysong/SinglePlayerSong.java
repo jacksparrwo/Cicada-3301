@@ -123,127 +123,127 @@ public class SinglePlayerSong extends AppCompatActivity {
 
             @Override
             public void onDataLoaded(String data) {
-                if(data.equals("Mariah Carey - All I Want For Christmas.mp3")){
+                if(data.equals("Mariah_Carey_All_I_Want_For_Christmas.mp3")){
                     lyrics.setText(christmaslyricsArray[0]);
                 }
-                else if(data.equals("Michael Buble - It's Beginning To Look A Lot Like Christmas.mp3")){
+                else if(data.equals("Michael_Buble_Its_Beginning_To_Look_A_Lot_Like_Christmas.mp3")){
                     lyrics.setText(christmaslyricsArray[1]);
                 }
-                else if(data.equals("Jose Feliciano - Feliz Navidad.mp3")){
+                else if(data.equals("Jose_Feliciano_Feliz_Navidad.mp3")){
                     lyrics.setText(christmaslyricsArray[2]);
                 }
-                else if(data.equals("Michael Buble - Holly Jolly.mp3")){
+                else if(data.equals("Michael_Buble_Holly_Jolly.mp3")){
                     lyrics.setText(christmaslyricsArray[3]);
                 }
-                else if(data.equals("Michael Buble - I'll Be Home For Christmas.mp3")){
+                else if(data.equals("Michael_Buble_I'll_Be_Home_For_Christmas.mp3")){
                     lyrics.setText(christmaslyricsArray[4]);
                 }
-                else if(data.equals("Jingle Bell Rock.mp3")){
+                else if(data.equals("Jingle_Bell_Rock.mp3")){
                     lyrics.setText(christmaslyricsArray[5]);
                 }
-                else if(data.equals("Wham - Last Christmas.mp3")){
+                else if(data.equals("Wham_Last_Christmas.mp3")){
                     lyrics.setText(christmaslyricsArray[6]);
                 }
-                else if(data.equals("Let It Snow Let It Snow Let It Snow.mp3")){
+                else if(data.equals("Let_It_Snow_Let_It_Snow_Let_It_Snow.mp3")){
                     lyrics.setText(christmaslyricsArray[7]);
                 }
-                else if(data.equals("Justin Bieber - Mistletoe.mp3")){
+                else if(data.equals("Justin_Bieber_Mistletoe.mp3")){
                     lyrics.setText(christmaslyricsArray[8]);
                 }
-                else if(data.equals("Brenda Lee - Rockin' Around The Christmas Tree.mp3")){
+                else if(data.equals("Brenda_Lee_Rockin'_Around_The_Christmas_Tree.mp3")){
                     lyrics.setText(christmaslyricsArray[9]);
                 }
-                else if(data.equals("Rudolph The Red Nosed Reindeer.mp3")){
+                else if(data.equals("Rudolph_The_Red_Nosed_Reindeer.mp3")){
                     lyrics.setText(christmaslyricsArray[10]);
                 }
-                else if(data.equals("Frank Sinatra - Santa Claus Is Coming To Town.mp3")){
+                else if(data.equals("Frank_Sinatra_Santa_Claus_Is_Coming_To_Town.mp3")){
                     lyrics.setText(christmaslyricsArray[11]);
                 }
-                else if(data.equals("Ariana Grande - Santa Tell Me.mp3")){
+                else if(data.equals("Ariana_Grande_Santa_Tell_Me.mp3")){
                     lyrics.setText(christmaslyricsArray[12]);
                 }
-                else if(data.equals("Train - Shake Up Christmas.mp3")){
+                else if(data.equals("Train_Shake_Up_Christmas.mp3")){
                     lyrics.setText(christmaslyricsArray[13]);
                 }
-                else if(data.equals("Celine Dion - So This Is Christmas.mp3")){
+                else if(data.equals("Celine_Dion_So_This_Is_Christmas.mp3")){
                     lyrics.setText(christmaslyricsArray[14]);
                 }
-                else if(data.equals("Michael Buble - White Christmas.mp3")){
+                else if(data.equals("Michael_Buble_White_Christmas.mp3")){
                     lyrics.setText(christmaslyricsArray[15]);
                 }
-                else if(data.equals("Michael Jackson - Billie Jean.mp3")){
+                else if(data.equals("Michael_Jackson_Billie_Jean.mp3")){
                     lyrics.setText(oldieLyricsArray[0]);
                 }
-                else if(data.equals("King of Africa - Bomba.mp3")){
+                else if(data.equals("King_of_Africa_Bomba.mp3")){
                     lyrics.setText(oldieLyricsArray[1]);
                 }
-                else if(data.equals("Kylie Minogue - Can't Get You Out Of My Head.mp3")){
+                else if(data.equals("Kylie_Minogue_Can't_Get_You_Out_Of_My_Head.mp3")){
                     lyrics.setText(oldieLyricsArray[2]);
                 }
-                else if(data.equals("Mr President - Coco Jambo.mp3")){
+                else if(data.equals("Mr_President_Coco_Jambo.mp3")){
                     lyrics.setText(oldieLyricsArray[3]);
                 }
-                else if(data.equals("Abba - Dancing Queen.mp3")){
+                else if(data.equals("Abba_Dancing_Queen.mp3")){
                     lyrics.setText(oldieLyricsArray[4]);
                 }
-                else if(data.equals("Abba - Gimme Gimme Gimme.mp3")){
+                else if(data.equals("Abba_Gimme_Gimme_Gimme.mp3")){
                     lyrics.setText(oldieLyricsArray[5]);
                 }
-                else if(data.equals("Whitney Houston - I Wanna Dance With Somebody.mp3")){
+                else if(data.equals("Whitney_Houston_I_Wanna_Dance_With_Somebody.mp3")){
                     lyrics.setText(oldieLyricsArray[6]);
                 }
-                else if(data.equals("Lou Bega - Mambo Nr.5.mp3")){
+                else if(data.equals("Lou_Bega_Mambo_Nr_5.mp3")){
                     lyrics.setText(oldieLyricsArray[7]);
                 }
-                else if(data.equals("Savage Garden - To The Moon And Back.mp3")){
+                else if(data.equals("Savage_Garden_To_The_Moon_And_Back.mp3")){
                     lyrics.setText(oldieLyricsArray[8]);
                 }
-                else if(data.equals("Wham - Wake Me Up.mp3")){
+                else if(data.equals("Wham_Wake_Me_Up.mp3")){
                     lyrics.setText(oldieLyricsArray[9]);
                 }
-                else if(data.equals("Pussycat Dolls - Buttons (feat Snoop Dog).mp3")){
+                else if(data.equals("Pussycat_Dolls_Buttons_(feat_Snoop_Dog).mp3")){
                     lyrics.setText(partyLyricsArray[0]);
                 }
-                else if(data.equals("Akcent - French Kiss.mp3")){
+                else if(data.equals("Akcent_French_Kiss.mp3")){
                     lyrics.setText(partyLyricsArray[1]);
                 }
-                else if(data.equals("Bon Jovi - It's My Life.mp3")){
+                else if(data.equals("Bon_Jovi_Its_My_Life.mp3")){
                     lyrics.setText(partyLyricsArray[2]);
                 }
-                else if(data.equals("Ricky Martin - Livin' La Vida Loca.mp3")){
+                else if(data.equals("Ricky_Martin_Livin'_La_Vida_Loca.mp3")){
                     lyrics.setText(partyLyricsArray[3]);
                 }
-                else if(data.equals("Beyonce - Single Ladies.mp3")){
+                else if(data.equals("Beyonce_Single_Ladies.mp3")){
                     lyrics.setText(partyLyricsArray[4]);
                 }
-                else if(data.equals("James Arthur - Impossible.mp3")){
+                else if(data.equals("James_Arthur_Impossible.mp3")){
                     lyrics.setText(sadLyricsArray[0]);
                 }
-                else if(data.equals("Sam Fischer - This City.mp3")){
+                else if(data.equals("Sam_Fischer_This_City.mp3")){
                     lyrics.setText(sadLyricsArray[1]);
                 }
-                else if(data.equals("The 1975 - Somebody Else (Official Video).mp3")){
+                else if(data.equals("The_1975_Somebody_Else.mp3")){
                     lyrics.setText(sadLyricsArray[2]);
                 }
-                else if(data.equals("When I Was Your Man - Bruno Mars.mp3")){
+                else if(data.equals("When_I_Was_Your_Man_Bruno_Mars.mp3")){
                     lyrics.setText(sadLyricsArray[3]);
                 }
-                else if(data.equals("Alcazar - Crying At The Discoteque.mp3")){
+                else if(data.equals("Alcazar_Crying_At_The_Discoteque.mp3")){
                     lyrics.setText(showerLyricsArray[0]);
                 }
-                else if(data.equals("Backstreet Boys - I Want It That Way.mp3")){
+                else if(data.equals("Backstreet_Boys_I_Want_It_That_Way.mp3")){
                     lyrics.setText(showerLyricsArray[1]);
                 }
-                else if(data.equals("Beyoncé, Shakira - Beautiful Liar.mp3")){
+                else if(data.equals("Beyoncé_Shakira_Beautiful_Liar.mp3")){
                     lyrics.setText(showerLyricsArray[2]);
                 }
-                else if(data.equals("Cyndi Lauper - Girls Just Want To Have Fun.mp3")){
+                else if(data.equals("Cyndi_Lauper_Girls_Just_Want_To_Have_Fun.mp3")){
                     lyrics.setText(showerLyricsArray[3]);
                 }
-                else if(data.equals("Modern Talking - You're My Heart, You're My Soul.mp3")){
+                else if(data.equals("Modern_Talking_You're_My_Heart_You're_My_Soul.mp3")){
                     lyrics.setText(showerLyricsArray[4]);
                 }
-                else if(data.equals("Queen - I Want To Break Free.mp3")){
+                else if(data.equals("Queen_I_Want_To_Break_sFree.mp3")){
                     lyrics.setText(showerLyricsArray[5]);
                 }
 
