@@ -41,7 +41,7 @@ public class SongChoice extends AppCompatActivity {
                         for(int i=0; i<mStorage.GetTotalNumberOfSongs(); i++) {
                             if(j < s.length) {
                                 int charToLong = Character.getNumericValue(s[j].charAt(0));
-                                int charToLong2 = s[j].charAt(1) == ' ' ? -1 : Character.getNumericValue(s[j].charAt(1));
+                                int charToLong2 = !Character.isDigit(s[j].charAt(1)) ? -1 : Character.getNumericValue(s[j].charAt(1));
                                 charToLong = charToLong2 == -1 ? charToLong : charToLong * 10 + charToLong2;
 
                                 if (charToLong == i) {

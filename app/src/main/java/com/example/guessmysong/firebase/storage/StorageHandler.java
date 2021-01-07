@@ -170,13 +170,27 @@ public class StorageHandler {
         });
     }
 
-    public boolean CheckSong(String song) {
-        boolean res = false;
+    public int CheckSong(String song) {
+        int res = 0;
 
         if(song.replaceAll(" ", "_").equals(currentSong.replace(".mp3", "")) && (false == guessed)) {
-            UpdateUserRewards();
+            String s = rewardSystem.GetSongListIndexesCategory(songType);
+            String sSplit[] = s.split(", ");
+            res = 1;
             guessed = true;
-            res = true;
+
+            for(int i=0; i<s.length();i++) {
+                long charToLong = Character.getNumericValue(sSplit[i].charAt(0));
+                long charToLong2 = !Character.isDigit(sSplit[i].charAt(1)) ? -1 : Character.getNumericValue(sSplit[i].charAt(1));
+                charToLong = charToLong2 == -1 ? charToLong : charToLong * 10 + charToLong2;
+
+                if(charToLong == songIndex) {
+                    res = 2;
+                }
+            }
+            if(res == 1) {
+                UpdateUserRewards();
+            }
         }
 
         return res;
@@ -192,7 +206,7 @@ public class StorageHandler {
         MainActivity.UserRef.child("categorysongsguessednumbers").child(songType).setValue(rewardSystem.UpdateSongIndexesCategory(songType, songIndex, currentSong.replaceAll("_", " ").replace(".mp3", "")));
     }
 
-    public boolean checkMediaPlayerIsPlaying(){
+    public boolean checkMediaPlayerIsPlaying() {
         boolean playing = false;
         if(mediaPlayer.isPlaying())
             playing = true;

@@ -30,6 +30,7 @@ public class UserRewardSystem {
     private final long ACHIEVEMENT_GRADE2 = 2;
     private final long ACHIEVEMENT_GRADE3 = 3;
     private final long ACHIEVEMENT_GRADE4 = 4;
+    private final long MAX_LEVEL = 50;
     private long userExp;
     private long userLevel;
     private long songsGuessed;
@@ -270,7 +271,7 @@ public class UserRewardSystem {
 
                 for(int i=0; i<arrSplit.length; i++) {
                     long charToLong = Character.getNumericValue(arrSplit[i].charAt(0));
-                    long charToLong2 = arrSplit[i].charAt(1) == ' ' ? -1 : Character.getNumericValue(arrSplit[i].charAt(1));
+                    long charToLong2 = !Character.isDigit(arrSplit[i].charAt(1)) ? -1 : Character.getNumericValue(arrSplit[i].charAt(1));
                     charToLong = charToLong2 == -1 ? charToLong : charToLong * 10 + charToLong2;
 
                     constructed += arrSplit[i] + ", ";
@@ -280,7 +281,7 @@ public class UserRewardSystem {
                     } else if((charToLong < index) && (foundIndex == false) && (smallerThanFirst == false)) {
                         if(i+1 < arrSplit.length) {
                             long charToLongNext = Character.getNumericValue(arrSplit[i+1].charAt(0));
-                            long charToLongNext2 = arrSplit[i+1].charAt(1) == ' ' ? -1 : Character.getNumericValue(arrSplit[i+1].charAt(1));
+                            long charToLongNext2 = !Character.isDigit(arrSplit[i+1].charAt(1)) ? -1 : Character.getNumericValue(arrSplit[i+1].charAt(1));
                             charToLongNext = charToLongNext2 == - 1 ? charToLongNext : charToLongNext * 10 + charToLongNext2;
 
                             if(charToLongNext > index) {
@@ -302,5 +303,32 @@ public class UserRewardSystem {
         }
 
         return this.songlistIndexes.get(catNum);
+    }
+
+    public String GetSongListIndexesCategory(String category) {
+        int catNum = 0;
+        if(category.equals(EMusicTypes.CHRISTMAS.getName())) {
+            catNum = 0;
+        } else if(category.equals(EMusicTypes.KIDS.getName())) {
+            catNum = 1;
+        } else if(category.equals(EMusicTypes.LOVE.getName())) {
+            catNum = 2;
+        } else if(category.equals(EMusicTypes.OLDIE.getName())) {
+            catNum = 3;
+        } else if(category.equals(EMusicTypes.PARTY.getName())) {
+            catNum = 4;
+        } else if(category.equals(EMusicTypes.SAD.getName())) {
+            catNum = 5;
+        } else if(category.equals(EMusicTypes.SHOWER.getName())) {
+            catNum = 6;
+        } else if(category.equals(EMusicTypes.SUMMER.getName())) {
+            catNum = 7;
+        }
+
+        return this.songlistIndexes.get(catNum);
+    }
+
+    public long GetMaxLevel() {
+        return MAX_LEVEL;
     }
 }

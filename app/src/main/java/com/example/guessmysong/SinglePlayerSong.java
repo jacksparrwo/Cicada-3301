@@ -153,12 +153,14 @@ public class SinglePlayerSong extends AppCompatActivity {
 
     public void onClickCheck(View v){
         String song = songName.getText().toString().toLowerCase().trim();
-        boolean res = mStorage.CheckSong(song);
+        int res = mStorage.CheckSong(song);
 
-        if(res) {
+        if(res == 1) {
             Toast.makeText(SinglePlayerSong.this, "You got this song!", Toast.LENGTH_SHORT).show();
-        } else {
+        } else if (res == 0){
             Toast.makeText(SinglePlayerSong.this, "Not correct!", Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(SinglePlayerSong.this, "You already guessed the song!", Toast.LENGTH_SHORT).show();
         }
     }
 
